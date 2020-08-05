@@ -63,5 +63,6 @@ namespace Shoop.Models
 
         public virtual ApplicationUser User {get; set;}
         public virtual ICollection<Order> Orders { get; set; }  //Many to one relation with Orders table, join table will be created automatically
+                                                                //One customer can have many orders
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace Shoop.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<OrderRow> OrderRows { get; set; }
+        public IEnumerable ApplicationUsers { get; internal set; }
 
         public static ApplicationDbContext Create()
         {

@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -11,6 +13,8 @@ namespace Shoop.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ICollection<Customer> Customers { get; internal set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -32,10 +36,20 @@ namespace Shoop.Models
         public DbSet<State> State { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<OrderRow> OrderRows { get; set; }
+        public IEnumerable ApplicationUsers { get; internal set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Customer>()
+                .HasRequired(b => b.User)
+                .WithMany(a => a.Customers)
+                .HasForeignKey(b => b.UserId);
+        }
     }
+
 }

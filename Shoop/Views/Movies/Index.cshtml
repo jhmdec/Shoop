@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Shoop.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+@*Remove Link to create movies*@
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        @*Remove fields MovieImageUrl, IMDBUrl and StatusFlag from view*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.MovieImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMDBUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusFlag)
+            </th>
+            <th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+
+        @*Remove fields MovieImageUrl, IMDBUrl and StatusFlag from view*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.MovieImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMDBUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusFlag)
+        </td>*@
+
+        @*Remove options to edit*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+        </td>
+    </tr>
+    }
+
+</table>
+
+@*<div class="form-group">
+    @Html.Label("Movie", new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownList("Role", (SelectList)ViewBag.Name, " ")
+    </div>
+</div>*@
+

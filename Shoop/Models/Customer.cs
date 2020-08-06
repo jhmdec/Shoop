@@ -56,7 +56,7 @@ namespace Shoop.Models
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
 
-        //[Required]
+        
         public string UserId { get; set; }   /*ASPNETUser table*/
         public virtual ApplicationUser User {get; set;}
 

@@ -24,6 +24,11 @@ namespace Shoop.Migrations
             //Make sure to include the table contents, every record can be specified here
             //Another option is to create a SQL file with the data
             //Put all the data in a separate file and then call on the file here
+
+
+            //*****************************************************
+            //This could not be added as UserId is a required field and can't be added manually
+            //*****************************************************
             //context.Customers.AddOrUpdate(
             //    //Specify details
             //    c => c.FirstName,

@@ -21,26 +21,30 @@ namespace Shoop.Models
         public string Director { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.DateTime)]
         public DateTime ReleaseYear { get; set; }
 
         [Required]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
         
-        [StringLength(255)]
+        //[StringLength(255)] Need more than 255 characters
         [DataType(DataType.ImageUrl)]
         public string MovieImageUrl { get; set; }
 
-        [StringLength(255)]
+        //[StringLength(255)] Need more than 255 characters
         [DataType(DataType.Url)]
         public string IMDBUrl { get; set; }
 
+        /// <summary>
+        /// Changed from StatusFlag to State
+        /// </summary>
         [Required]
-        public int StatusFlag { get; set; }
+        public int StateId { get; set; }
 
+        public virtual State State { get; set; }   //Foreign key relation
         //Add 1 to many relation with OrderRows table, autogenerate jointable
-        public virtual ICollection<OrderRow> OrderRows { get; set; }  
-
-
+        public virtual ICollection<OrderRow> OrderRows { get; set; }
     }
 }

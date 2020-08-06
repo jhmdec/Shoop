@@ -181,6 +181,22 @@
     <Compile Include="Migrations\202008050917583_Seed.Designer.cs">
       <DependentUpon>202008050917583_Seed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008051736494_Added State.cs" />
+    <Compile Include="Migrations\202008051736494_Added State.Designer.cs">
+      <DependentUpon>202008051736494_Added State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008051752462_New Attempt to Add State.cs" />
+    <Compile Include="Migrations\202008051752462_New Attempt to Add State.Designer.cs">
+      <DependentUpon>202008051752462_New Attempt to Add State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008060728344_Table changes and seed.cs" />
+    <Compile Include="Migrations\202008060728344_Table changes and seed.Designer.cs">
+      <DependentUpon>202008060728344_Table changes and seed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008060845173_Step 01.cs" />
+    <Compile Include="Migrations\202008060845173_Step 01.Designer.cs">
+      <DependentUpon>202008060845173_Step 01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -189,6 +205,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\OrderRow.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -271,6 +288,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008050917583_Seed.resx">
       <DependentUpon>202008050917583_Seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051736494_Added State.resx">
+      <DependentUpon>202008051736494_Added State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051752462_New Attempt to Add State.resx">
+      <DependentUpon>202008051752462_New Attempt to Add State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008060728344_Table changes and seed.resx">
+      <DependentUpon>202008060728344_Table changes and seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008060845173_Step 01.resx">
+      <DependentUpon>202008060845173_Step 01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

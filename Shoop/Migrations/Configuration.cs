@@ -24,26 +24,26 @@ namespace Shoop.Migrations
             //Make sure to include the table contents, every record can be specified here
             //Another option is to create a SQL file with the data
             //Put all the data in a separate file and then call on the file here
-            context.Customers.AddOrUpdate(
-                //Specify details
-                c => c.FirstName,
-                new Customer
-                {
-                    FirstName = "Janne",
-                    LastName = "Ek",
-                    BillingAddress = "North Street 1",
-                    BillingPostalCode = "12345",
-                    BillingCity = "City1",
-                    PhoneNumber = "0123456789",
-                    EmailAddress = "Janne.ek@example.com",
-                    DeliveryAddress = "North Street 1",
-                    DeliveryPostalCode = "12345",
-                    DeliveryCity = "City1",
-                }
+            //context.Customers.AddOrUpdate(
+            //    //Specify details
+            //    c => c.FirstName,
+            //    new Customer
+            //    {
+            //        FirstName = "Janne",
+            //        LastName = "Ek",
+            //        BillingAddress = "North Street 1",
+            //        BillingPostalCode = "12345",
+            //        BillingCity = "City1",
+            //        PhoneNumber = "0123456789",
+            //        EmailAddress = "Janne.ek@example.com",
+            //        DeliveryAddress = "North Street 1",
+            //        DeliveryPostalCode = "12345",
+            //        DeliveryCity = "City1",
+            //    }
 
 
 
-                );
+            //    );
         }
     }
 }

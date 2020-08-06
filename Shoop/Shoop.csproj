@@ -171,16 +171,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\OrderRowsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008050909041_Initial.cs" />
-    <Compile Include="Migrations\202008050909041_Initial.Designer.cs">
-      <DependentUpon>202008050909041_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050917583_Seed.cs" />
-    <Compile Include="Migrations\202008050917583_Seed.Designer.cs">
-      <DependentUpon>202008050917583_Seed.cs</DependentUpon>
+    <Compile Include="Migrations\202008060752012_Initial.cs" />
+    <Compile Include="Migrations\202008060752012_Initial.Designer.cs">
+      <DependentUpon>202008060752012_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -254,9 +252,21 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\OrderRows\Create.cshtml" />
+    <Content Include="Views\OrderRows\Delete.cshtml" />
+    <Content Include="Views\OrderRows\Details.cshtml" />
+    <Content Include="Views\OrderRows\Edit.cshtml" />
+    <Content Include="Views\OrderRows\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Customes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -272,11 +282,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008050909041_Initial.resx">
-      <DependentUpon>202008050909041_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050917583_Seed.resx">
-      <DependentUpon>202008050917583_Seed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008060752012_Initial.resx">
+      <DependentUpon>202008060752012_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

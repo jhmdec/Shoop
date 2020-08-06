@@ -57,11 +57,9 @@ namespace Shoop.Models
         public string EmailAddress { get; set; }
 
         //[Required]
-        [StringLength(255)]
-        public string UserId { get; set; }   /*Use GUID to create?*/
-
-
+        public string UserId { get; set; }   /*ASPNETUser table*/
         public virtual ApplicationUser User {get; set;}
+
         public virtual ICollection<Order> Orders { get; set; }  //Many to one relation with Orders table, join table will be created automatically
                                                                 //One customer can have many orders
     }

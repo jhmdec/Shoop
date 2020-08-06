@@ -74,6 +74,8 @@ namespace Shoop.Migrations
                 );
             context.SaveChanges();
 
+            //Comment to let Tony get the original file back
+
             context.Movies.AddOrUpdate(
                 m => m.Title,
                 new Movie

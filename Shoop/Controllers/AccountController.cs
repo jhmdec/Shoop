@@ -9,17 +9,23 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Shoop.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace Shoop.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
+            UserManager=new ApplicationUserManager(new UserStore<ApplicationUser>(context));
+
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -51,7 +57,7 @@ namespace Shoop.Controllers
                 _userManager = value;
             }
         }
-
+       
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -151,21 +157,33 @@ namespace Shoop.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                //if (UserManager != null)
+                //{
+             
+                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
 
-                    return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
+                //Firstname and lastname added after Nalini demo
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName=model.LastName };
+                //UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                    SignInManager = new ApplicationSignInManager(UserManager, AuthenticationManager);
+
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                        // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                    AddErrors(result);
+                //}
             }
 
             // If we got this far, something failed, redisplay form
@@ -480,6 +498,7 @@ namespace Shoop.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
+
         #endregion
     }
 }

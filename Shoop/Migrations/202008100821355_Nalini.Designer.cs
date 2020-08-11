@@ -7,13 +7,13 @@ namespace Shoop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class NewAttempttoAddState : IMigrationMetadata
+    public sealed partial class step03 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NewAttempttoAddState));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(step03));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008051752462_New Attempt to Add State"; }
+            get { return "202008100821355_step 03"; }
         }
         
         string IMigrationMetadata.Source

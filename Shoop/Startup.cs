@@ -17,35 +17,35 @@ namespace Shoop
 
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
-            List<string> roles = new List<string>() {
-                "SU",
-                "Admin",
-                "Manager",
-                "Customer",
-                "User",
-                "Guest"
-            };
+            ////ConfigureAuth(app);
+            //List<string> roles = new List<string>() {
+            //    "SU",
+            //    "Admin",
+            //    "Manager",
+            //    "Customer",
+            //    "User",
+            //    "Guest"
+            //};
 
-            // Roles that has different levels of access
-            CreateRoles(roles);
-            CreateSuperUser();
+            //// Roles that has different levels of access
+            //CreateRoles(roles);
+            //CreateSuperUser();
         }
         
         public void CreateRoles(List<string> roles)
         {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            var newRole = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-            foreach (var role in roles)
-            {
-                newRole.Name = role;
-                if (!roleManager.RoleExists(role))
-                {
-                    roleManager.Create(newRole);
-                }
-            }
-            context.SaveChanges();
+            //var newRole = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+            //foreach (var role in roles)
+            //{
+            //    newRole.Name = role;
+            //    if (!roleManager.RoleExists(role))
+            //    {
+            //        roleManager.Create(newRole);
+            //    }
+            //}
+            //context.SaveChanges();
         }
 
         public void CreateSuperUser()

@@ -39,7 +39,7 @@ namespace Shoop.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.ApplicationUsers, "Id", "Email");
+            ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
         }
 

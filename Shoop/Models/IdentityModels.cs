@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -13,7 +14,13 @@ namespace Shoop.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public ICollection<Customer> Customers { get; internal set; }
+        //public ICollection<Customer> Customers { get; internal set; }
+        //Add after Nalini demo
+        [Required]
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        //****************
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -36,20 +43,20 @@ namespace Shoop.Models
         public DbSet<State> State { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<OrderRow> OrderRows { get; set; }
-        public IEnumerable ApplicationUsers { get; internal set; }
+        public IEnumerable ApplicationUsers { get; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Customer>()
-                .HasRequired(b => b.User)
-                .WithMany(a => a.Customers)
-                .HasForeignKey(b => b.UserId);
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<Customer>()
+        //        .HasRequired(b => b.User)
+        //        .WithMany(a => a.Customers)
+        //        .HasForeignKey(b => b.UserId);
+        //}
     }
 
 }

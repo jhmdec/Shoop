@@ -21,7 +21,11 @@ namespace Shoop.Migrations
                 "User",
                 "Guest"
             };
-        string userId;
+        string userId1;
+        string userId2;
+        string userId3;
+        string userId4;
+        string userId5;
 
         public Configuration()
         {
@@ -148,7 +152,7 @@ namespace Shoop.Migrations
                 {
                     var result = userManager.AddToRole(user1.Id, "User");  // Do we need to capture return?
                 }
-                userId = user1.Id;
+                userId1 = user1.Id;
 
                 user2 = new ApplicationUser
                 {
@@ -162,6 +166,7 @@ namespace Shoop.Migrations
                 {
                     var result = userManager.AddToRole(user2.Id, "User");  // Do we need to capture return?
                 }
+                userId2 = user2.Id;
 
                 user3 = new ApplicationUser
                 {
@@ -175,6 +180,7 @@ namespace Shoop.Migrations
                 {
                     var result = userManager.AddToRole(user3.Id, "User");  // Do we need to capture return?
                 }
+                userId3 = user3.Id;
 
                 user4 = new ApplicationUser
                 {
@@ -188,6 +194,7 @@ namespace Shoop.Migrations
                 {
                     var result = userManager.AddToRole(user4.Id, "User");  // Do we need to capture return?
                 }
+                userId4 = user4.Id;
 
                 user5 = new ApplicationUser
                 {
@@ -201,83 +208,84 @@ namespace Shoop.Migrations
                 {
                     var result = userManager.AddToRole(user5.Id, "User");  // Do we need to capture return?
                 }
+                userId5 = user5.Id;
                 context.SaveChanges();
             }
 
-            context.Customers.AddOrUpdate(
-                //Specify details
-                c => c.FirstName,
-                new Customer
-                {
-                    FirstName = "Nisse",
-                    LastName = "Pettersson",
-                    BillingAddress = "Strandvägen 14",
-                    BillingPostalCode = "12345",
-                    BillingCity = "Sigtuna",
-                    DeliveryAddress = "Strandvägen 14",
-                    DeliveryPostalCode = "12345",
-                    DeliveryCity = "Sigtuna",
-                    PhoneNumber = "07065165161",
-                    EmailAddress = "nisse@gmail.com",
-                    ApplicationUser = user1
-                },
-                new Customer
-                {
-                    FirstName = "Olle",
-                    LastName = "Olsson",
-                    BillingAddress = "Hamngatan 23",
-                    BillingPostalCode = "18299",
-                    BillingCity = "Ludvika",
-                    DeliveryAddress = "Hamngatan 23",
-                    DeliveryPostalCode = "18299",
-                    DeliveryCity = "Ludvika",
-                    PhoneNumber = "0645547181",
-                    EmailAddress = "olle@hotmail.com",
-                    ApplicationUser = user2
-                },
-                new Customer
-                {
-                    FirstName = "Angelica",
-                    LastName = "Karlsson",
-                    BillingAddress = "Furirgatan 8",
-                    BillingPostalCode = "12098",
-                    BillingCity = "Linköping",
-                    DeliveryAddress = "",
-                    DeliveryPostalCode = "",
-                    DeliveryCity = "",
-                    PhoneNumber = "013168472",
-                    EmailAddress = "angelica@hotmail.com",
-                    ApplicationUser = user3
-                },
-                new Customer
-                {
-                    FirstName = "Anna",
-                    LastName = "Paulsson",
-                    BillingAddress = "Moränvägen 90",
-                    BillingPostalCode = "27493",
-                    BillingCity = "Jordbro",
-                    DeliveryAddress = "Moränvägen 90",
-                    DeliveryPostalCode = "27493",
-                    DeliveryCity = "Jordbro",
-                    PhoneNumber = "086516843",
-                    EmailAddress = "anna74@gmail.com",
-                    ApplicationUser = user4
-                },
-                new Customer
-                {
-                    FirstName = "Allan",
-                    LastName = "Posset",
-                    BillingAddress = "Folkungagatan 2",
-                    BillingPostalCode = "11630",
-                    BillingCity = "Stockholm",
-                    DeliveryAddress = "Folkungagatan 2",
-                    DeliveryPostalCode = "11630",
-                    DeliveryCity = "Stockholm",
-                    PhoneNumber = "0705516487",
-                    EmailAddress = "allan@gmail.com",
-                    ApplicationUser = user5
-                });
-            context.SaveChanges();
+            //context.Customers.AddOrUpdate(
+            //    //Specify details
+            //    c => c.FirstName,
+            //    new Customer
+            //    {
+            //        FirstName = "Nisse",
+            //        LastName = "Pettersson",
+            //        BillingAddress = "Strandvägen 14",
+            //        BillingPostalCode = "12345",
+            //        BillingCity = "Sigtuna",
+            //        DeliveryAddress = "Strandvägen 14",
+            //        DeliveryPostalCode = "12345",
+            //        DeliveryCity = "Sigtuna",
+            //        PhoneNumber = "07065165161",
+            //        EmailAddress = "nisse@gmail.com",
+            //        UserId = userId1
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Olle",
+            //        LastName = "Olsson",
+            //        BillingAddress = "Hamngatan 23",
+            //        BillingPostalCode = "18299",
+            //        BillingCity = "Ludvika",
+            //        DeliveryAddress = "Hamngatan 23",
+            //        DeliveryPostalCode = "18299",
+            //        DeliveryCity = "Ludvika",
+            //        PhoneNumber = "0645547181",
+            //        EmailAddress = "olle@hotmail.com",
+            //        UserId = userId2
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Angelica",
+            //        LastName = "Karlsson",
+            //        BillingAddress = "Furirgatan 8",
+            //        BillingPostalCode = "12098",
+            //        BillingCity = "Linköping",
+            //        DeliveryAddress = "",
+            //        DeliveryPostalCode = "",
+            //        DeliveryCity = "",
+            //        PhoneNumber = "013168472",
+            //        EmailAddress = "angelica@hotmail.com",
+            //        UserId = userId3
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Anna",
+            //        LastName = "Paulsson",
+            //        BillingAddress = "Moränvägen 90",
+            //        BillingPostalCode = "27493",
+            //        BillingCity = "Jordbro",
+            //        DeliveryAddress = "Moränvägen 90",
+            //        DeliveryPostalCode = "27493",
+            //        DeliveryCity = "Jordbro",
+            //        PhoneNumber = "086516843",
+            //        EmailAddress = "anna74@gmail.com",
+            //        UserId = userId4
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Allan",
+            //        LastName = "Posset",
+            //        BillingAddress = "Folkungagatan 2",
+            //        BillingPostalCode = "11630",
+            //        BillingCity = "Stockholm",
+            //        DeliveryAddress = "Folkungagatan 2",
+            //        DeliveryPostalCode = "11630",
+            //        DeliveryCity = "Stockholm",
+            //        PhoneNumber = "0705516487",
+            //        EmailAddress = "allan@gmail.com",
+            //        UserId = userId5
+            //    });
+            //context.SaveChanges();
         }
 
         private void CreateMovies(ApplicationDbContext context)
@@ -425,7 +433,7 @@ namespace Shoop.Migrations
         /// <param name="context"></param>
         private void CreateOrders(ApplicationDbContext context)
         {
-            var cust = this.context.Customers.FirstOrDefault(c => c.ApplicationUser.Id == userId);
+            var cust = this.context.Customers.FirstOrDefault(c => c.User.Id == userId1);
             var cust1 = context.Customers.FirstOrDefault(c => c.EmailAddress == "janne.ek@example.com");
             //var query = from c in context.Customers where c.ApplicationUser.UserName == "JanneEk" select c.Id;
             //join o in context.Orders on c.Id equals o.CustomerId

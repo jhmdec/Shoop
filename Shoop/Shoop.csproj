@@ -181,14 +181,6 @@
     <Compile Include="Migrations\202008060752012_Initial.Designer.cs">
       <DependentUpon>202008060752012_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008051736494_Added State.cs" />
-    <Compile Include="Migrations\202008051736494_Added State.Designer.cs">
-      <DependentUpon>202008051736494_Added State.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008051752462_New Attempt to Add State.cs" />
-    <Compile Include="Migrations\202008051752462_New Attempt to Add State.Designer.cs">
-      <DependentUpon>202008051752462_New Attempt to Add State.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202008060728344_Table changes and seed.cs" />
     <Compile Include="Migrations\202008060728344_Table changes and seed.Designer.cs">
       <DependentUpon>202008060728344_Table changes and seed.cs</DependentUpon>
@@ -196,6 +188,26 @@
     <Compile Include="Migrations\202008060845173_Step 01.cs" />
     <Compile Include="Migrations\202008060845173_Step 01.Designer.cs">
       <DependentUpon>202008060845173_Step 01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008061118349_Default data.cs" />
+    <Compile Include="Migrations\202008061118349_Default data.Designer.cs">
+      <DependentUpon>202008061118349_Default data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008070735582_Step 02.cs" />
+    <Compile Include="Migrations\202008070735582_Step 02.Designer.cs">
+      <DependentUpon>202008070735582_Step 02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008100821355_Nalini.cs" />
+    <Compile Include="Migrations\202008100821355_Nalini.Designer.cs">
+      <DependentUpon>202008100821355_Nalini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008111032571_Step 3.cs" />
+    <Compile Include="Migrations\202008111032571_Step 3.Designer.cs">
+      <DependentUpon>202008111032571_Step 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008111206103_Step 4.cs" />
+    <Compile Include="Migrations\202008111206103_Step 4.Designer.cs">
+      <DependentUpon>202008111206103_Step 4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -214,6 +226,38 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MovPic\ABeautifulMind.jpg" />
+    <Content Include="Content\MovPic\ABeautifulMindF.jpg" />
+    <Content Include="Content\MovPic\Alien.jpg" />
+    <Content Include="Content\MovPic\AlienF.jpg" />
+    <Content Include="Content\MovPic\Crash.jpg" />
+    <Content Include="Content\MovPic\CrashF.jpg" />
+    <Content Include="Content\MovPic\Goodfellas.jpg" />
+    <Content Include="Content\MovPic\GoodfellasF.jpg" />
+    <Content Include="Content\MovPic\IlPostino.jpg" />
+    <Content Include="Content\MovPic\IlPostinoF.jpg" />
+    <Content Include="Content\MovPic\Jaws.jpg" />
+    <Content Include="Content\MovPic\JawsF.jpeg" />
+    <Content Include="Content\MovPic\MrsDoubtfire.jpg" />
+    <Content Include="Content\MovPic\MrsDoubtfireF.jpg" />
+    <Content Include="Content\MovPic\OnceUponaTimeinAmerica.jpg" />
+    <Content Include="Content\MovPic\OnceUponaTimeinAmericaF.jpg" />
+    <Content Include="Content\MovPic\Ran.jpg" />
+    <Content Include="Content\MovPic\RanF.jpg" />
+    <Content Include="Content\MovPic\StarWars.jpg" />
+    <Content Include="Content\MovPic\StarwarsF.jpg" />
+    <Content Include="Content\MovPic\StarwarsReturnofthejedi.jpg" />
+    <Content Include="Content\MovPic\StarwarsReturnofthejediF.jpg" />
+    <Content Include="Content\MovPic\TheGodfather.jpg" />
+    <Content Include="Content\MovPic\TheGodfather2.jpg" />
+    <Content Include="Content\MovPic\TheGodfather2F.jpg" />
+    <Content Include="Content\MovPic\TheGodfather3.jpg" />
+    <Content Include="Content\MovPic\TheGodfather3F.jpg" />
+    <Content Include="Content\MovPic\TheGodfatherF.jpg" />
+    <Content Include="Content\MovPic\Thegreenmile.jpg" />
+    <Content Include="Content\MovPic\ThegreenmileF.jpg" />
+    <Content Include="Content\MovPic\TheShawshankRedemption.jpg" />
+    <Content Include="Content\MovPic\TheShawshankRedemptionF.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -287,6 +331,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
+    <Content Include="Views\CustomerData\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,17 +353,26 @@
     <EmbeddedResource Include="Migrations\202008060752012_Initial.resx">
       <DependentUpon>202008060752012_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051736494_Added State.resx">
-      <DependentUpon>202008051736494_Added State.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051752462_New Attempt to Add State.resx">
-      <DependentUpon>202008051752462_New Attempt to Add State.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008060728344_Table changes and seed.resx">
       <DependentUpon>202008060728344_Table changes and seed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008060845173_Step 01.resx">
       <DependentUpon>202008060845173_Step 01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008061118349_Default data.resx">
+      <DependentUpon>202008061118349_Default data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008070735582_Step 02.resx">
+      <DependentUpon>202008070735582_Step 02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008100821355_Nalini.resx">
+      <DependentUpon>202008100821355_Nalini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111032571_Step 3.resx">
+      <DependentUpon>202008111032571_Step 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111206103_Step 4.resx">
+      <DependentUpon>202008111206103_Step 4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

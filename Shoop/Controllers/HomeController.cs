@@ -13,11 +13,14 @@ namespace Shoop.Controllers
 
         public ActionResult Index()
         {
+       
             return View();
         }
 
         public ActionResult About()
         {
+            var UserId = User.Identity;
+            ViewBag.UserId = UserId;
             ViewBag.Message = "Your application description page.";
 
             return View();

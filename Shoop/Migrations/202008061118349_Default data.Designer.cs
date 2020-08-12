@@ -7,13 +7,13 @@ namespace Shoop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedState : IMigrationMetadata
+    public sealed partial class Defaultdata : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedState));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Defaultdata));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008051736494_Added State"; }
+            get { return "202008061118349_Default data"; }
         }
         
         string IMigrationMetadata.Source

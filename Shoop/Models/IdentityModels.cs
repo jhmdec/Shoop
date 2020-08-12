@@ -20,6 +20,8 @@ namespace Shoop.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        public ICollection<Customer> Customers { get; internal set; }
+
         //****************
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -49,14 +51,16 @@ namespace Shoop.Models
         {
             return new ApplicationDbContext();
         }
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.Entity<Customer>()
-        //        .HasRequired(b => b.User)
-        //        .WithMany(a => a.Customers)
-        //        .HasForeignKey(b => b.UserId);
-        //}
+        //This is needed to make sure that we can work with users in models
+        //It links the customer model to the user table
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Customer>()
+                .HasRequired(b => b.User)
+                .WithMany(a => a.Customers)
+                .HasForeignKey(b => b.UserId);
+        }
     }
 
 }

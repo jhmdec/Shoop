@@ -78,6 +78,7 @@ namespace Shoop.Controllers
             {
                 return View(model);
             }
+             SignInManager = new ApplicationSignInManager(UserManager, AuthenticationManager);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

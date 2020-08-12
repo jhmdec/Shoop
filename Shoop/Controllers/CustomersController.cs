@@ -36,6 +36,14 @@ namespace Shoop.Controllers
             return View(customer);
         }
 
+        //Make sure Customer data is only shown for specific customer
+        public ActionResult CustomerDetails(String id)
+        {
+            var Customer = db.Customers.Where(c => c.UserId == id).FirstOrDefault();
+            var CustId = Customer.Id;
+            return RedirectToAction("Details", new { id = CustId });
+        }
+
         // GET: Customers/Create
         public ActionResult Create()
         {

@@ -160,7 +160,7 @@ namespace Shoop.Controllers
             {
                 //Firstname and lastname added after Nalini demo
                 //var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName=model.LastName };
-                var user = new ApplicationUser { /*UserName = model.Email,*/ Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 //UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
                 var result = await UserManager.CreateAsync(user, model.Password);

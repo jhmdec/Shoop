@@ -177,25 +177,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008121152145_Initial.cs" />
-    <Compile Include="Migrations\202008121152145_Initial.Designer.cs">
-      <DependentUpon>202008121152145_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008121220137_Baseline.cs" />
-    <Compile Include="Migrations\202008121220137_Baseline.Designer.cs">
-      <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008130808019_CustomerChange.cs" />
-    <Compile Include="Migrations\202008130808019_CustomerChange.Designer.cs">
-      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008130816473_CustomerWorks.cs" />
-    <Compile Include="Migrations\202008130816473_CustomerWorks.Designer.cs">
-      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
+    <Compile Include="Migrations\202008070940402_Initial.cs" />
+    <Compile Include="Migrations\202008070940402_Initial.Designer.cs">
+      <DependentUpon>202008070940402_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\FirstPageViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -206,6 +195,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-shoop.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -228,6 +218,8 @@
     <Content Include="Content\MovPic\OnceUponaTimeinAmericaF.jpg" />
     <Content Include="Content\MovPic\Ran.jpg" />
     <Content Include="Content\MovPic\RanF.jpg" />
+    <Content Include="Content\MovPic\SHOOPLOGO_INVERTED.jpg" />
+    <Content Include="Content\MovPic\SHOOP_TEST.png" />
     <Content Include="Content\MovPic\StarWars.jpg" />
     <Content Include="Content\MovPic\StarwarsF.jpg" />
     <Content Include="Content\MovPic\StarwarsReturnofthejedi.jpg" />
@@ -242,6 +234,7 @@
     <Content Include="Content\MovPic\ThegreenmileF.jpg" />
     <Content Include="Content\MovPic\TheShawshankRedemption.jpg" />
     <Content Include="Content\MovPic\TheShawshankRedemptionF.jpg" />
+    <Content Include="Content\ShoopStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -269,7 +262,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout_Bootstrap3.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -315,7 +308,8 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
-    <Content Include="Views\CustomerData\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_MoviesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,17 +328,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008121152145_Initial.resx">
-      <DependentUpon>202008121152145_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008121220137_Baseline.resx">
-      <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008130808019_CustomerChange.resx">
-      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008130816473_CustomerWorks.resx">
-      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008070940402_Initial.resx">
+      <DependentUpon>202008070940402_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

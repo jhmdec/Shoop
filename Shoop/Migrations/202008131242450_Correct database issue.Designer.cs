@@ -7,13 +7,13 @@ namespace Shoop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Baseline : IMigrationMetadata
+    public sealed partial class Correctdatabaseissue : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Baseline));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Correctdatabaseissue));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008121220137_Baseline"; }
+            get { return "202008131242450_Correct database issue"; }
         }
         
         string IMigrationMetadata.Source

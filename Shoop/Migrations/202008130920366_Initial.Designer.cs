@@ -13,7 +13,7 @@ namespace Shoop.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202008121152145_Initial"; }
+            get { return "202008130920366_Initial"; }
         }
         
         string IMigrationMetadata.Source

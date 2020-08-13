@@ -174,24 +174,17 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrderRowsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008121152145_Initial.cs" />
-    <Compile Include="Migrations\202008121152145_Initial.Designer.cs">
-      <DependentUpon>202008121152145_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202008130920366_Initial.cs" />
+    <Compile Include="Migrations\202008130920366_Initial.Designer.cs">
+      <DependentUpon>202008130920366_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008121220137_Baseline.cs" />
-    <Compile Include="Migrations\202008121220137_Baseline.Designer.cs">
-      <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008130808019_CustomerChange.cs" />
-    <Compile Include="Migrations\202008130808019_CustomerChange.Designer.cs">
-      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008130816473_CustomerWorks.cs" />
-    <Compile Include="Migrations\202008130816473_CustomerWorks.Designer.cs">
-      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
+    <Compile Include="Migrations\202008131242450_Correct database issue.cs" />
+    <Compile Include="Migrations\202008131242450_Correct database issue.Designer.cs">
+      <DependentUpon>202008131242450_Correct database issue.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -202,6 +195,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\OrderRow.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -322,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -337,17 +332,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008121152145_Initial.resx">
-      <DependentUpon>202008121152145_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008130920366_Initial.resx">
+      <DependentUpon>202008130920366_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008121220137_Baseline.resx">
-      <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008130808019_CustomerChange.resx">
-      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008130816473_CustomerWorks.resx">
-      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008131242450_Correct database issue.resx">
+      <DependentUpon>202008131242450_Correct database issue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

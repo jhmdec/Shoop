@@ -1,0 +1,44 @@
+﻿
+@model IEnumerable<Shoop.Models.Movie>
+
+
+
+<table class="table">
+
+    <tr>
+
+        @foreach (var item in Model)
+
+        {
+
+
+
+
+
+
+
+
+
+            <td>
+
+                <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" />
+
+
+
+            </td>
+
+            @*<td>
+
+                    @Html.DisplayFor(modelItem => item.IMDBUrl)
+
+                </td>*@
+
+        }
+
+    </tr>
+
+
+
+
+
+</table>

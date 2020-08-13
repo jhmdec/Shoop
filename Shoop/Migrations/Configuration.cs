@@ -22,59 +22,60 @@ namespace Shoop.Migrations
             //Another option is to create a SQL file with the data
             //Put all the data in a separate file and then call on the file here
 
-            context.Customers.AddOrUpdate(
-                //Specify details
-                c => c.FirstName,
-                new Customer
-                {
-                    FirstName = "Janne",
-                    LastName = "Ek",
-                    BillingAddress = "North Street 1",
-                    BillingPostalCode = "12345",
-                    BillingCity = "Linköping",
-                    PhoneNumber = "0123456789",
-                    EmailAddress = "janne.ek@example.com",
-                    DeliveryAddress = "North Street 1",
-                    DeliveryPostalCode = "12345",
-                    DeliveryCity = "Linköping",
-                },
-                new Customer
-                {
-                    FirstName = "Jacqueline",
-                    LastName = "de Caluwe",
-                    BillingAddress = "South Street 2",
-                    BillingPostalCode = "22233",
-                    BillingCity = "Linköping",
-                    PhoneNumber = "+4673987766",
-                    EmailAddress = "jacqueline.de.caluwe@shoop.com",
-                    DeliveryAddress = "",
-                    DeliveryPostalCode = "",
-                    DeliveryCity = "",
-                },
-                new Customer
-                {
-                    FirstName = "Tony",
-                    LastName = "Lundén",
-                    BillingAddress = "East Street 3",
-                    BillingPostalCode = "99911",
-                    BillingCity = "Linköping",
-                    PhoneNumber = "+46709552288",
-                    EmailAddress = "tony.lunden@shoop.com",
-                    DeliveryAddress = "East Street 3",
-                    DeliveryPostalCode = "99911",
-                    DeliveryCity = "+46709552288",
-                });
-            context.SaveChanges();
+            //context.Customers.AddOrUpdate(
+            //    //Specify details
+            //    c => c.FirstName,
+            //    new Customer
+            //    {
+            //        FirstName = "Janne",
+            //        LastName = "Ek",
+            //        BillingAddress = "North Street 1",
+            //        BillingPostalCode = "12345",
+            //        BillingCity = "Linköping",
+            //        PhoneNumber = "0123456789",
+            //        EmailAddress = "janne.ek@example.com",
+            //        DeliveryAddress = "North Street 1",
+            //        DeliveryPostalCode = "12345",
+            //        DeliveryCity = "Linköping",
+            //        UserId=
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Jacqueline",
+            //        LastName = "de Caluwe",
+            //        BillingAddress = "South Street 2",
+            //        BillingPostalCode = "22233",
+            //        BillingCity = "Linköping",
+            //        PhoneNumber = "+4673987766",
+            //        EmailAddress = "jacqueline.de.caluwe@shoop.com",
+            //        DeliveryAddress = "",
+            //        DeliveryPostalCode = "",
+            //        DeliveryCity = "",
+            //    },
+            //    new Customer
+            //    {
+            //        FirstName = "Tony",
+            //        LastName = "Lundén",
+            //        BillingAddress = "East Street 3",
+            //        BillingPostalCode = "99911",
+            //        BillingCity = "Linköping",
+            //        PhoneNumber = "+46709552288",
+            //        EmailAddress = "tony.lunden@shoop.com",
+            //        DeliveryAddress = "East Street 3",
+            //        DeliveryPostalCode = "99911",
+            //        DeliveryCity = "+46709552288",
+            //    });
+            //context.SaveChanges();
 
-            context.State.AddOrUpdate(
-                s => s.Status,
-                new State { Status = "Available" },
-                new State { Status = "Retired" },
-                new State { Status = "Campaign" }
-                );
-            context.SaveChanges();
+            //context.State.AddOrUpdate(
+            //    s => s.Status,
+            //    new State { Status = "Available" },
+            //    new State { Status = "Retired" },
+            //    new State { Status = "Campaign" }
+            //    );
+            //context.SaveChanges();
 
-            //Comment to let Tony get the original file back
+            ////Comment to let Tony get the original file back
 
             context.Movies.AddOrUpdate(
                 m => m.Title,
@@ -99,16 +100,16 @@ namespace Shoop.Migrations
                     IMDBUrl = "https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1",
                     State = context.State.FirstOrDefault(st => st.Status == "Available")
                     // Genre: Drama, Thriller, Crime
-                //},
-                //new Movie
-                //{
-                //    Title = "Serenity",
-                //    Director = "Joss Whedon",
-                //    ReleaseYear = new DateTime(2006, 4, 12),
-                //    Price = 49,
-                //    MovieImageUrl = "",
-                //    IMDBUrl = "",
-                //    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    //},
+                    //new Movie
+                    //{
+                    //    Title = "Serenity",
+                    //    Director = "Joss Whedon",
+                    //    ReleaseYear = new DateTime(2006, 4, 12),
+                    //    Price = 49,
+                    //    MovieImageUrl = "",
+                    //    IMDBUrl = "",
+                    //    State = context.State.FirstOrDefault(st => st.Status == "Available")
                 });
             context.SaveChanges();
         }

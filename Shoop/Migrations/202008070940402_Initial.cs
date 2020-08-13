@@ -36,10 +36,13 @@ namespace Shoop.Migrations
                         CustomerId = c.Int(nullable: false),
                         OrderDate = c.DateTime(nullable: false),
                         NrOfItems = c.Int(nullable: false),
+                        State_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CustomerId);
+                .ForeignKey("dbo.States", t => t.State_Id)
+                .Index(t => t.CustomerId)
+                .Index(t => t.State_Id);
             
             CreateTable(
                 "dbo.OrderRows",
@@ -65,9 +68,20 @@ namespace Shoop.Migrations
                         Director = c.String(nullable: false, maxLength: 150),
                         ReleaseYear = c.DateTime(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        MovieImageUrl = c.String(maxLength: 255),
-                        IMDBUrl = c.String(maxLength: 255),
-                        StatusFlag = c.Int(nullable: false),
+                        MovieImageUrl = c.String(),
+                        IMDBUrl = c.String(),
+                        StateId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.States", t => t.StateId, cascadeDelete: true)
+                .Index(t => t.StateId);
+            
+            CreateTable(
+                "dbo.States",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Status = c.String(nullable: false, maxLength: 20),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -149,6 +163,8 @@ namespace Shoop.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.OrderRows", "OrderId", "dbo.Orders");
+            DropForeignKey("dbo.Movies", "StateId", "dbo.States");
+            DropForeignKey("dbo.Orders", "State_Id", "dbo.States");
             DropForeignKey("dbo.OrderRows", "MovieId", "dbo.Movies");
             DropForeignKey("dbo.Orders", "CustomerId", "dbo.Customers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
@@ -157,8 +173,10 @@ namespace Shoop.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.Movies", new[] { "StateId" });
             DropIndex("dbo.OrderRows", new[] { "MovieId" });
             DropIndex("dbo.OrderRows", new[] { "OrderId" });
+            DropIndex("dbo.Orders", new[] { "State_Id" });
             DropIndex("dbo.Orders", new[] { "CustomerId" });
             DropIndex("dbo.Customers", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
@@ -166,6 +184,7 @@ namespace Shoop.Migrations
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.States");
             DropTable("dbo.Movies");
             DropTable("dbo.OrderRows");
             DropTable("dbo.Orders");

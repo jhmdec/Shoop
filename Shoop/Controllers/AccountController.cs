@@ -17,14 +17,14 @@ namespace Shoop.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        ApplicationDbContext context = new ApplicationDbContext();
+        //ApplicationDbContext context = new ApplicationDbContext();
 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
-            UserManager=new ApplicationUserManager(new UserStore<ApplicationUser>(context));
+            //UserManager=new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
         }
 
@@ -78,7 +78,7 @@ namespace Shoop.Controllers
             {
                 return View(model);
             }
-             SignInManager = new ApplicationSignInManager(UserManager, AuthenticationManager);
+            //SignInManager = new ApplicationSignInManager(UserManager, AuthenticationManager);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -158,13 +158,9 @@ namespace Shoop.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if (UserManager != null)
-                //{
-             
-                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-
                 //Firstname and lastname added after Nalini demo
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName=model.LastName };
+                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName=model.LastName };
+                var user = new ApplicationUser { /*UserName = model.Email,*/ Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 //UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
                 var result = await UserManager.CreateAsync(user, model.Password);

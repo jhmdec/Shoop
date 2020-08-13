@@ -185,6 +185,14 @@
     <Compile Include="Migrations\202008121220137_Baseline.Designer.cs">
       <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008130808019_CustomerChange.cs" />
+    <Compile Include="Migrations\202008130808019_CustomerChange.Designer.cs">
+      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008130816473_CustomerWorks.cs" />
+    <Compile Include="Migrations\202008130816473_CustomerWorks.Designer.cs">
+      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -331,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008121220137_Baseline.resx">
       <DependentUpon>202008121220137_Baseline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008130808019_CustomerChange.resx">
+      <DependentUpon>202008130808019_CustomerChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008130816473_CustomerWorks.resx">
+      <DependentUpon>202008130816473_CustomerWorks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

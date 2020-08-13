@@ -20,13 +20,25 @@ namespace Shoop.Controllers
             return View(db.Movies.ToList());
         }
 
-        //public ActionResult MostPopular()
-        //{
-        //    var OrderedMost = (from m in db.Movies
-        //                       join r in db.OrderRows on m.Id equals r.MovieId
-        //                       )
-        //    return View();
-        //}
+        public ActionResult MostPopular()
+        {
+
+            var MovieList = (from m in db.Movies
+                             join r in db.OrderRows on m.Id equals r.MovieId
+                             orderby m.Title descending
+                             group r by r.MovieId into g
+                             orderby g.Count()
+                             from res in g
+                             select new
+                             {
+                                 res.Movie.MovieImageUrl,
+                                 res.Movie.Title,
+                                 Count = g.Count()
+                             }).Distinct().OrderByDescending(M => M.Count).ToList().Take(5);
+
+            
+            return View(MovieList);
+        }
 
         public ActionResult MostRecent()
         {

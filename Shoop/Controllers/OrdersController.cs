@@ -36,6 +36,13 @@ namespace Shoop.Controllers
             return View(order);
         }
 
+        public ActionResult CustomerOrderDetails(String id)
+        {
+            var Customer = db.Customers.Where(c => c.UserId == id).FirstOrDefault();
+            var CustId = Customer.Id;
+            return RedirectToAction("Details", new { id = CustId });
+        }
+
         // GET: Orders/Create
         public ActionResult Create()
         {

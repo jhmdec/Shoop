@@ -201,6 +201,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-shoop.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -223,6 +224,8 @@
     <Content Include="Content\MovPic\OnceUponaTimeinAmericaF.jpg" />
     <Content Include="Content\MovPic\Ran.jpg" />
     <Content Include="Content\MovPic\RanF.jpg" />
+    <Content Include="Content\MovPic\SHOOPLOGO_INVERTED.jpg" />
+    <Content Include="Content\MovPic\SHOOP_TEST.png" />
     <Content Include="Content\MovPic\StarWars.jpg" />
     <Content Include="Content\MovPic\StarwarsF.jpg" />
     <Content Include="Content\MovPic\StarwarsReturnofthejedi.jpg" />
@@ -310,8 +313,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
-    <Content Include="Views\CustomerData\Index.cshtml" />
-    <Content Include="Views\Home\_MovieList.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MoviesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>

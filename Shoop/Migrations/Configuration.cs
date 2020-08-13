@@ -66,7 +66,8 @@ namespace Shoop.Migrations
                 // Create SU user                   
                 var user = new ApplicationUser
                 {
-                    UserName = "ShoopSuper",
+                    //UserName = "ShoopSuper",
+                    UserName = "super.user@shoop.com",
                     FirstName = "Super",
                     LastName = "User",
                     Email = "super.user@shoop.com",

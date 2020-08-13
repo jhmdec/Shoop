@@ -92,5 +92,7 @@ namespace Shoop.Controllers
 
             return MovieListRecentlyBought;
         }
+
     }
+
 }

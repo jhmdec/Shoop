@@ -33,16 +33,16 @@ namespace Shoop.Models
         [StringLength(50)]
         public string BillingCity { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(250)]
         public string DeliveryAddress { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(10)]
         [DataType(DataType.PostalCode)]
         public string DeliveryPostalCode { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(50)]
         public string DeliveryCity { get; set; }
 

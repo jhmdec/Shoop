@@ -3,7 +3,7 @@ namespace Shoop.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Step3 : DbMigration
+    public partial class CustomerWorks : DbMigration
     {
         public override void Up()
         {

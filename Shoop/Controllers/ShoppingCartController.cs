@@ -5,10 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Shoop.Models;
 
+
 namespace Shoop.Controllers
 {
     public class ShoppingCartController : Controller
     {
+
         // GET: ShoppingCart
         public ActionResult Index()
         {
@@ -28,6 +30,17 @@ namespace Shoop.Controllers
         public ActionResult Buy()
         {
             return View();
+        }
+        public ActionResult Add(Movie movie, int custId)
+        {
+            ShoppingCartViewModel scvm = new ShoppingCartViewModel();
+            scvm.CustId = custId; //Save Customer
+            scvm.CartOrder.Add(movie);
+            scvm.NrOfMovieItems++;
+            
+
+            return View();
+            
         }
     }
 }

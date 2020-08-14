@@ -178,13 +178,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008130920366_Initial.cs" />
-    <Compile Include="Migrations\202008130920366_Initial.Designer.cs">
-      <DependentUpon>202008130920366_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008131242450_Correct database issue.cs" />
-    <Compile Include="Migrations\202008131242450_Correct database issue.Designer.cs">
-      <DependentUpon>202008131242450_Correct database issue.cs</DependentUpon>
+    <Compile Include="Migrations\202008131409588_Initial.cs" />
+    <Compile Include="Migrations\202008131409588_Initial.Designer.cs">
+      <DependentUpon>202008131409588_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -334,11 +330,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008130920366_Initial.resx">
-      <DependentUpon>202008130920366_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008131242450_Correct database issue.resx">
-      <DependentUpon>202008131242450_Correct database issue.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008131409588_Initial.resx">
+      <DependentUpon>202008131409588_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

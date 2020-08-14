@@ -4,13 +4,10 @@
     <tr>
         @foreach (var item in Model)
         {
-
-
-            
-
             <td>
+                @Html.ActionLink("", "_SingleMoviePartial", new { Id = item.Id })
                 <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)"/>
-               
+                @Html.ActionImage("Edit", new { id = MyId }, "~/Content/Images/Image.bmp", "Edit")
             </td>
             @*<td>
                 @Html.DisplayFor(modelItem => item.IMDBUrl)

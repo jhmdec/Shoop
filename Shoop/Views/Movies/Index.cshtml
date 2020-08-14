@@ -73,18 +73,23 @@
         @*Remove options to edit*@
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id })
+
+            @*Code from Robert*@
+             @*@Html.ActionLink("Add to Cart","AddtoCart","Order",new{ id = item.Id,returnAction="DisplayMovies",returnController="Movie"},new {@class = "btn btn-primary btn-large btn-addtocart"})*@
+            
+            @*@Html.ActionLink("Add", "ShoppingCart", new { id = item.Id }), new { id = item.Id, returnAction = "DisplayMovies", returnController = "Movie" }, new { @class = "btn btn-primary btn-large btn-addtocart" }) )*@
+            
+            
+            @*<a class="btn btn-primary" href=@Html.ActionLink("Add to Cart","Add", "ShoppingCart", new { id=item.Id } )*@
+
+            <a class="btn btn-primary" href="/ShoppingCart/Add?id=@item.Id">Add to Cart</a>
+
+
+            @*<button id="btnaddtocart" class="btn btn-primary" onclick="location.href='@Url.Action("Add", "ShoppingCart")'", new { id = item.Id }>Add to Cart</button>*@
             @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
         </td>
     </tr>
     }
 
 </table>
-
-@*<div class="form-group">
-    @Html.Label("Movie", new { @class = "col-md-2 control-label" })
-    <div class="col-md-10">
-        @Html.DropDownList("Role", (SelectList)ViewBag.Name, " ")
-    </div>
-</div>*@
-

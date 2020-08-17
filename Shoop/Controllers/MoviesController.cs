@@ -71,6 +71,15 @@ namespace Shoop.Controllers
 
             return View(RecentlyBought);
         }
+        
+        public ActionResult Search(string searchvalue)
+        {
+            var SearchResult = (from m in db.Movies
+                                where m.Title.Contains(searchvalue) || m.Director.Contains(searchvalue)
+                                select m).ToList();
+       
+            return View(SearchResult);
+        }
     
     // GET: Movies/Details/5
     public ActionResult Details(int? id)

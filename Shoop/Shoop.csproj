@@ -174,7 +174,7 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrderRowsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\ShoopCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,7 +191,6 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\OrderRow.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -310,11 +309,13 @@
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoopCart.cshtml" />
+    <Content Include="Views\Shared\_ImdbDetail.cshtml" />
     <Content Include="Views\Shared\_MoviesPartial.cshtml" />
+    <Content Include="Views\Movies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -66,9 +66,9 @@
 
         @*Remove options to edit*@
         <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
-            @Html.ActionLink("Details", "Details", new { id = item.Id })
-
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
+            <a class="btn btn-primary" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">Imdb</a>
             @*Code from Robert*@
              @*@Html.ActionLink("Add to Cart","AddtoCart","Order",new{ id = item.Id,returnAction="DisplayMovies",returnController="Movie"},new {@class = "btn btn-primary btn-large btn-addtocart"})*@
             
@@ -77,7 +77,7 @@
             
             @*<a class="btn btn-primary" href=@Html.ActionLink("Add to Cart","Add", "ShoppingCart", new { id=item.Id } )*@
 
-            <a class="btn btn-primary" href="/ShoppingCart/Add?id=@item.Id">Add to Cart</a>
+            <a class="btn btn-primary" href="/ShoopCart/Add?id=@item.Id">Add to Cart</a>
 
 
             @*<button id="btnaddtocart" class="btn btn-primary" onclick="location.href='@Url.Action("Add", "ShoppingCart")'", new { id = item.Id }>Add to Cart</button>*@

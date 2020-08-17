@@ -40,7 +40,7 @@ namespace Shoop.Models
         /// <summary>
         /// Changed from StatusFlag to State
         /// </summary>
-        [Required]
+        //[Required]
         public int StateId { get; set; }
 
         public virtual State State { get; set; }   //Foreign key relation

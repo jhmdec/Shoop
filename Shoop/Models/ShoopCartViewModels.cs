@@ -8,7 +8,7 @@ using Shoop.Models;
 
 namespace Shoop.Models
 {
-    public class ShoppingCartViewModel
+    public class ShoopCartViewModels
     {
         [Required]
         public int CustId { get; set; }

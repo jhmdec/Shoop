@@ -14,6 +14,14 @@ namespace Shoop.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // GET: Cart
+        
+            public ActionResult Cart()
+        {
+            return View();
+
+        }
+
         // GET: Movies
         public ActionResult Index()
         {
@@ -98,7 +106,7 @@ namespace Shoop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl,StatusFlag")] Movie movie)
+        public ActionResult Create([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +138,7 @@ namespace Shoop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl,StatusFlag")] Movie movie)
+        public ActionResult Edit([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl")] Movie movie)
         {
             if (ModelState.IsValid)
             {

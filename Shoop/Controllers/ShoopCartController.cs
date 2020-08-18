@@ -8,12 +8,15 @@ using Shoop.Models;
 
 namespace Shoop.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class ShoopCartController : Controller
     {
-
+        ApplicationDbContext context= new ApplicationDbContext();
+        ShoopCartViewModels obj = new ShoopCartViewModels();
         // GET: ShoppingCart
+        //public ActionResult Index(ShoopCartViewModels shoopcart)
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -31,12 +34,14 @@ namespace Shoop.Controllers
         {
             return View();
         }
-        public ActionResult Add(Movie movie, int custId)
+        public ActionResult Add(int id)
         {
-            ShoppingCartViewModel scvm = new ShoppingCartViewModel();
-            scvm.CustId = custId; //Save Customer
-            scvm.CartOrder.Add(movie);
-            scvm.NrOfMovieItems++;
+            Movie mov = context.Movies.Find(id);
+            List<Movie> LM = new List<Movie>();
+            LM.Add(mov);
+            Session["MovieList"] = LM;
+            //obj.CartOrder.Add(mov);
+            //obj.NrOfMovieItems++;
             
 
             return View();

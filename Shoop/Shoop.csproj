@@ -168,19 +168,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Cart.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrderRowsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\ShoopCart.cs" />
+    <Compile Include="Controllers\ShoopCartController.cs" />
+    <Compile Include="Controllers\ShoopingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202008131409588_Initial.cs" />
     <Compile Include="Migrations\202008131409588_Initial.Designer.cs">
       <DependentUpon>202008131409588_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008170901434_Initial1.cs" />
+    <Compile Include="Migrations\202008170901434_Initial1.Designer.cs">
+      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -191,7 +198,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\OrderRow.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\ShoppingCartViewModel.cs" />
+    <Compile Include="Models\ShoopCartViewModels.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -222,6 +229,7 @@
     <Content Include="Content\MovPic\RanF.jpg" />
     <Content Include="Content\MovPic\SHOOPLOGO_INVERTED.jpg" />
     <Content Include="Content\MovPic\SHOOP_TEST.png" />
+    <Content Include="Content\MovPic\Shopping Cart.jpg" />
     <Content Include="Content\MovPic\StarWars.jpg" />
     <Content Include="Content\MovPic\StarwarsF.jpg" />
     <Content Include="Content\MovPic\StarwarsReturnofthejedi.jpg" />
@@ -242,6 +250,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\MovPic\Cart Button.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,12 +318,13 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MoviesPartial.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoopCart.cshtml" />
+    <Content Include="Views\ShoopCart\Index.cshtml" />
+    <Content Include="Views\ShoopingCart\DispalyCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -332,6 +342,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008131409588_Initial.resx">
       <DependentUpon>202008131409588_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008170901434_Initial1.resx">
+      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

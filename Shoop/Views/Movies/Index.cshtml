@@ -77,7 +77,8 @@
             
             @*<a class="btn btn-primary" href=@Html.ActionLink("Add to Cart","Add", "ShoppingCart", new { id=item.Id } )*@
 
-            <a class="btn btn-primary" href="/ShoppingCart/Add?id=@item.Id">Add to Cart</a>
+           @* <a class="btn btn-primary" href="/ShoopCart/Add?id=@item.Id">Add to Cart</a>*@
+            @Html.ActionLink("Buy", "AddToCart", "ShoopingCart", new {id=item.Id},null)
 
 
             @*<button id="btnaddtocart" class="btn btn-primary" onclick="location.href='@Url.Action("Add", "ShoppingCart")'", new { id = item.Id }>Add to Cart</button>*@

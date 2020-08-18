@@ -326,7 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoopCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -344,9 +343,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008180736216_layout changes to navbar.resx">
       <DependentUpon>202008180736216_layout changes to navbar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008180809391_Remove State from movies.resx">
-      <DependentUpon>202008180809391_Remove State from movies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008170901434_Initial1.resx">
       <DependentUpon>202008170901434_Initial1.cs</DependentUpon>

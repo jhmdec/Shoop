@@ -11,7 +11,7 @@ namespace Shoop.Controllers
     public class ShoopCartController : Controller
     {
         ApplicationDbContext context= new ApplicationDbContext();
-        ShoopCartViewModels obj = new ShoopCartViewModels();
+        
         // GET: ShoppingCart
         //public ActionResult Index(ShoopCartViewModels shoopcart)
         public ActionResult Index()

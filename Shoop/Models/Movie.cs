@@ -37,8 +37,7 @@ namespace Shoop.Models
         [DataType(DataType.Url)]
         public string IMDBUrl { get; set; }
 
-        public virtual State State { get; set; }   //Foreign key relation
-        //Add 1 to many relation with OrderRows table, autogenerate jointable
-        public virtual ICollection<OrderRow> OrderRows { get; set; }
+        
+        
     }
 }

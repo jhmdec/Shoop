@@ -79,6 +79,15 @@ namespace Shoop.Controllers
 
             return View(RecentlyBought);
         }
+        
+        public ActionResult Search(string searchvalue)
+        {
+            var SearchResult = (from m in db.Movies
+                                where m.Title.Contains(searchvalue) || m.Director.Contains(searchvalue)
+                                select m).ToList();
+       
+            return View(SearchResult);
+        }
     
     // GET: Movies/Details/5
     public ActionResult Details(int? id)
@@ -95,6 +104,22 @@ namespace Shoop.Controllers
             return View(movie);
         }
 
+        // GET: Shared/_SingleMoviePartial
+        public ActionResult MovieDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            return View(movie);
+        }
+
+        // Below are the legacy methods 
         // GET: Movies/Create
         public ActionResult Create()
         {

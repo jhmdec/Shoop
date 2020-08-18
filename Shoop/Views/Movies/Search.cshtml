@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Shoop.Models.Movie>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Result</h2>
+
+<table class="table">
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>
+                <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" />
+
+            </td>
+        }
+    </tr>
+</table>
+

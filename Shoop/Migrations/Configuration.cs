@@ -72,6 +72,8 @@ namespace Shoop.Migrations
                     Email = "super.user@shoop.com",
                     EmailConfirmed = true
                 };
+               
+              
 
                 var checkUser = userManager.Create(user, "Sup123_");
                 // Add user to Role SU    
@@ -291,7 +293,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0068646/?ref_=fn_al_tt_1",
-                    
+
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -302,7 +304,7 @@ namespace Shoop.Migrations
                     Price = 79,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,701,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0071562/?ref_=fn_al_tt_2 ",
-                    
+
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -313,7 +315,7 @@ namespace Shoop.Migrations
                     Price = 79,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNTc1YjhiNzktMjEyNS00YmNhLWExYjItZDhkNWJjZjYxOWZiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,667,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0099674/?ref_=fn_al_tt_1",
-                    
+
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -324,7 +326,7 @@ namespace Shoop.Migrations
                     Price = 49,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0073195/?ref_=fn_al_tt_1",
-                    
+
                     // Genre: Adventure, Thriller
                 },
                 new Movie
@@ -335,7 +337,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,643,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0076759/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=706e19a4-e4ad-4659-b087-ffc80ad81fcb&pf_rd_r=J0A8MRHEMNYJ5CDNZ4GE&pf_rd_s=center-5&pf_rd_t=60601&pf_rd_i=star-wars&ref_=fea_sw_advs_t1",
-                    
+
                     // Genre: Action, Adventure
                 },
                 new Movie
@@ -346,7 +348,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0120689/?ref_=nv_sr_srsg_0",
-                    
+
                     // Genre: Drama, Crime
                 },
                 new Movie
@@ -357,7 +359,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BZmVhNWIzOTMtYmVlZC00ZDVmLWIyODEtODEzOTAxYjAwMzVlXkEyXkFqcGdeQXVyMzIwNDY4NDI@._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0110877/?ref_=fn_al_tt_1",
-                    
+
                     // Genre: Biography, Comedy
                 },
                 new Movie
@@ -368,7 +370,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMmQ2MmU3NzktZjAxOC00ZDZhLTk4YzEtMDMyMzcxY2IwMDAyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,678,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0078748/?ref_=nv_sr_srsg_0",
-                    
+
                     // Genre: Horror, Sci-Fi
                 },
                 new Movie
@@ -379,7 +381,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMjExMDUzODE1N15BMl5BanBnXkFtZTgwNTU5NTYxMTE@._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0107614/?ref_=nv_sr_srsg_0 ",
-                    
+
                     // Genre: Comedy, Drama
                 },
                 new Movie
@@ -390,7 +392,7 @@ namespace Shoop.Migrations
                     Price = 49,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BOWE2MDAwZjEtODEyOS00ZjYyLTgzNDUtYmNiY2VmNWRiMTQxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX182_CR0,0,182,268_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0379786/?ref_=fn_al_tt_1",
-                    
+
                     // Genre: Sci-Fi, Action, Adventure
                 },
                 new Movie
@@ -400,54 +402,320 @@ namespace Shoop.Migrations
                     ReleaseYear = new DateTime(2020, 2, 10),
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-                    IMDBUrl = "https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1",
-                    
-                    // Genre: Drama, Thriller, Crime
-                    //},
-                    //new Movie
-                    //{
-                    //    Title = "",
-                    //    Director = "",
-                    //    ReleaseYear = new DateTime(1975, 1, 1),
-                    //    Price = 9,
-                    //    MovieImageUrl = "",
-                    //    IMDBUrl = "",
-                    //    State = context.State.FirstOrDefault(st => st.Status == "Retired")
-                    //    // Genre: 
-                });
-            context.SaveChanges();
-        }
-
-        /// <summary>
-        /// Not working and will not be used
-        /// </summary>
-        /// <param name="context"></param>
-        private void CreateOrders(ApplicationDbContext context)
-        {
-            var cust = this.context.Customers.FirstOrDefault(c => c.User.Id == userId1);
-            var cust1 = context.Customers.FirstOrDefault(c => c.EmailAddress == "janne.ek@example.com");
-            //var query = from c in context.Customers where c.ApplicationUser.UserName == "JanneEk" select c.Id;
-            //join o in context.Orders on c.Id equals o.CustomerId
-            //join or in db.OrderRows on o.Id equals or.OrderId
-            //join m in db.Movies on or.MovieId equals m.Id
-            //where m.Id == 1
-            //select c).Distinct();
-
-            context.Orders.AddOrUpdate(
-                o => o.CustomerId,
-                new Order
+                    IMDBUrl = "https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1"
+                },
+                new Movie
                 {
-                    CustomerId = cust1.Id,
-                    OrderDate = new DateTime(2020, 8, 9),
-                    NrOfItems = 1,
+                    Title = "Crash",
+                    Director = "Paul Haggis",
+                    ReleaseYear = new DateTime(2004, 3, 15),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BOTk1OTA1MjIyNV5BMl5BanBnXkFtZTcwODQxMTkyMQ@@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0375679/?ref_=nv_sr_srsg_2"
+                },
+                new Movie
+                {
+                    Title = "Return of the Jedi",
+                    Director = "Richard Marquand",
+                    ReleaseYear = new DateTime(1983, 11, 5),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY999_CR0,0,644,999_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0086190/?ref_=tt_sims_tt"
+                },
+                new Movie
+                {
+                    Title = "Ran",
+                    Director = "Akira Kurosawa",
+                    ReleaseYear = new DateTime(1985, 3, 20),
+                    Price = 199,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BZDBjZTM4ZmEtOTA5ZC00NTQzLTkyNzYtMmUxNGU2YjI5YjU5L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,706,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0089881/?ref_=fn_al_tt_1"
+                },
+                new Movie
+                {
+                    Title = "The Shawshank Redemption",
+                    Director = "Frank Darabont",
+                    ReleaseYear = new DateTime(1994, 5, 30),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0111161/?ref_=nv_sr_srsg_3"
+                },
+                new Movie
+                {
+                    Title = "Goodfellas",
+                    Director = "Martin Scorsese",
+                    ReleaseYear = new DateTime(1990, 7, 13),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX667_CR0,0,667,999_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0099685/"
+                },
+                new Movie
+                {
+                    Title = "Once Upon a Time in America",
+                    Director = "Sergio Leone",
+                    ReleaseYear = new DateTime(1984, 04, 07),
+                    Price = 149,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMGFkNWI4MTMtNGQ0OC00MWVmLTk3MTktOGYxN2Y2YWVkZWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,639,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0087843/?ref_=fn_al_tt_1"
+                },
+                new Movie
+                {
+                    Title = "A Beautiful Mind",
+                    Director = "Ron Howard",
+                    ReleaseYear = new DateTime(2001, 03, 11),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0268978/?ref_=fn_al_tt_1"
+                },
+                new Movie
+                {
+                    Title = "Gravity",
+                    Director = "Alfonso Cuarón",
+                    ReleaseYear = new DateTime(2013, 10, 10),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt1454468/?ref_=fn_al_tt_1"
+                },
+                new Movie
+                {
+                    Title = "Avatar",
+                    Director = "James Cameron",
+                    ReleaseYear = new DateTime(2009, 1, 21),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt0454876/?ref_=tt_sims_tti"
+                },
+                new Movie
+                {
+                    Title = "The Martian",
+                    Director = "Ridley Scott",
+                    ReleaseYear = new DateTime(2015, 9, 3),
+                    Price = 99,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt3659388/?ref_=tt_sims_tti"
+                },
+                new Movie
+                {
+                    Title = "The Revenant",
+                    Director = "Alejandro G. Inarritu",
+                    ReleaseYear = new DateTime(2015, 11, 11),
+                    Price = 79,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMDE5OWMzM2QtOTU2ZS00NzAyLWI2MDEtOTRlYjIxZGM0OWRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX672_CR0,0,672,999_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt1663202/?ref_=tt_sims_tti"
+                },
+                new Movie
+                {
+                    Title = "Arrival",
+                    Director = "Dennis Villeneuve",
+                    ReleaseYear = new DateTime(2016, 8, 30),
+                    Price = 79,
+                    MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SY1000_CR0,0,640,1000_AL_.jpg",
+                    IMDBUrl = "https://www.imdb.com/title/tt2543164/?ref_=tt_sims_tti"
                 });
             context.SaveChanges();
+
+
+            // Genre: Drama, Thriller, Crime
+            //},
+            //new Movie
+            //{
+            //    Title = "",
+            //    Director = "",
+            //    ReleaseYear = new DateTime(1975, 1, 1),;z
+            //    Price = 9,
+            //    MovieImageUrl = "",
+            //    IMDBUrl = "",
+            //    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+            //    // Genre: 
         }
 
-        private void CreateOrderRows(ApplicationDbContext context)
-        {
+       
+ 
+        //private void CreateOrders(ApplicationDbContext context)
+        //{
+        //    context.Orders.AddOrUpdate(
 
-        }
+        //        //o => o.CustomerId,
+        //        new Order
+        //        {
+        //            //CustomerId = context.Customers.FirstOrDefault(c=>c.FirstName=="Nisse").Id,
+        //            //CustomerId=3032,
+        //            //OrderDate = new DateTime(2020, 8, 9),
+        //            //NrOfItems = 2,
+        //        }
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
+        //        //    OrderDate = new DateTime(2020, 6, 11),
+        //        //    NrOfItems = 1,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
+        //        //    OrderDate = new DateTime(2020, 8, 9),
+        //        //    NrOfItems = 3,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
+        //        //    OrderDate = new DateTime(2019, 4, 20),
+        //        //    NrOfItems = 2,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Olle").Id,
+        //        //    OrderDate = new DateTime(2020, 1, 11),
+        //        //    NrOfItems = 1,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
+        //        //    OrderDate = new DateTime(2020, 5, 31),
+        //        //    NrOfItems = 1,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
+        //        //    OrderDate = new DateTime(2020, 7, 15),
+        //        //    NrOfItems = 2,
+        //        //},
+        //        //new Order
+        //        //{
+        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
+        //        //    OrderDate = new DateTime(2020, 2, 9),
+        //        //    NrOfItems = 1,
+        //        //}
+        //        );
+        //    context.SaveChanges();
+        //}
+
+        //private void CreateOrderRows(ApplicationDbContext context)
+        //{
+        //    context.OrderRows.AddOrUpdate(
+            
+        //    new OrderRow
+        //    {
+        //        OrderId = (from o in context.Orders
+        //                   join c in context.Customers on o.CustomerId equals c.Id
+        //                   where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
+        //                   select o).FirstOrDefault().Id,
+        //        MovieId = context.Movies.FirstOrDefault(m=>m.Title=="The Green Mile").Id, 
+        //        Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+
+        //        },
+
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 1)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Price
+
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 2)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 2)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 1)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Olle") && (o.NrOfItems == 1)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 1)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 2)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
+        //        },
+        //        new OrderRow
+        //        {
+        //            OrderId = (from o in context.Orders
+        //                       join c in context.Customers on o.CustomerId equals c.Id
+        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 2)
+        //                       select o).FirstOrDefault().Id,
+        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
+        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
+        //        });
+        //    context.SaveChanges();
+        //}
 
         /// <summary>
         /// GENERATED IN Startup.cs. DO NOT USE FOR NOW !!!

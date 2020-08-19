@@ -314,10 +314,11 @@
     <Content Include="Views\Shared\_MoviesPartial.cshtml" />
     <Content Include="Views\ShoppingCart\ShoopCart.cshtml" />
     <Content Include="Views\ShoopCart\Index.cshtml" />
-    <Content Include="Views\ShoopingCart\DisplayCart1.cshtml" />
     <Content Include="Views\Movies\Search.cshtml" />
     <Content Include="Views\Movies\SearchMovie.cshtml" />
     <Content Include="Views\ShoopingCart\DisplayCart.cshtml" />
+    <Content Include="Views\Displaybutton.cshtml" />
+    <Content Include="Views\ShoopingCart\ShowCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

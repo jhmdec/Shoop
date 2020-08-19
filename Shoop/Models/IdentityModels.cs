@@ -42,7 +42,6 @@ namespace Shoop.Models
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<State> State { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<OrderRow> OrderRows { get; set; }
         public IEnumerable ApplicationUsers { get; }
@@ -51,16 +50,17 @@ namespace Shoop.Models
         {
             return new ApplicationDbContext();
         }
+
         //This is needed to make sure that we can work with users in models
         //It links the customer model to the user table
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.Entity<Customer>()
-        //        .HasRequired(b => b.User)
-        //        .WithMany(a => a.Customers)
-        //        .HasForeignKey(b => b.UserId);
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Customer>()
+                .HasRequired(b => b.User)
+                .WithMany(a => a.Customers)
+                .HasForeignKey(b => b.UserId);
+        }
     }
 
 }

@@ -43,7 +43,6 @@ namespace Shoop.Migrations
             CreateInitialRolesAndUsesrs();
             //CreateRoles(context);     // WORKS, BUT NOT USING ATM
             //CreateUsers(context);     // NOT WORKING !!!
-            CreateStates(context);      // WORKS
             CreateCustomers(context);   // FIXING THE DELIVERY NOT REQUIRED
             CreateMovies(context);      // WORKS
             //CreateOrders(context);    // NOTE COMPLETED AND NOT USED
@@ -66,7 +65,8 @@ namespace Shoop.Migrations
                 // Create SU user                   
                 var user = new ApplicationUser
                 {
-                    UserName = "ShoopSuper",
+                    //UserName = "ShoopSuper",
+                    UserName = "super.user@shoop.com",
                     FirstName = "Super",
                     LastName = "User",
                     Email = "super.user@shoop.com",
@@ -113,17 +113,6 @@ namespace Shoop.Migrations
                     var result = userManager.AddToRole(user.Id, "User");  // Do we need to capture return?
                 }
             }
-        }
-
-        private void CreateStates(ApplicationDbContext context)
-        {
-            context.State.AddOrUpdate(
-                s => s.Status,
-                new State { Status = "Available" },
-                new State { Status = "Retired" },
-                new State { Status = "Campaign" }
-                );
-            context.SaveChanges();
         }
 
         private void CreateCustomers(ApplicationDbContext context)
@@ -302,7 +291,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0068646/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -313,7 +302,7 @@ namespace Shoop.Migrations
                     Price = 79,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,701,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0071562/?ref_=fn_al_tt_2 ",
-                    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -324,7 +313,7 @@ namespace Shoop.Migrations
                     Price = 79,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNTc1YjhiNzktMjEyNS00YmNhLWExYjItZDhkNWJjZjYxOWZiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,667,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0099674/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    
                     // Genre: Crime, Drama
                 },
                 new Movie
@@ -335,7 +324,7 @@ namespace Shoop.Migrations
                     Price = 49,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0073195/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Adventure, Thriller
                 },
                 new Movie
@@ -346,7 +335,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,643,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0076759/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=706e19a4-e4ad-4659-b087-ffc80ad81fcb&pf_rd_r=J0A8MRHEMNYJ5CDNZ4GE&pf_rd_s=center-5&pf_rd_t=60601&pf_rd_i=star-wars&ref_=fea_sw_advs_t1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    
                     // Genre: Action, Adventure
                 },
                 new Movie
@@ -357,7 +346,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0120689/?ref_=nv_sr_srsg_0",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Drama, Crime
                 },
                 new Movie
@@ -368,7 +357,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BZmVhNWIzOTMtYmVlZC00ZDVmLWIyODEtODEzOTAxYjAwMzVlXkEyXkFqcGdeQXVyMzIwNDY4NDI@._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0110877/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Biography, Comedy
                 },
                 new Movie
@@ -379,7 +368,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMmQ2MmU3NzktZjAxOC00ZDZhLTk4YzEtMDMyMzcxY2IwMDAyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,678,1000_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0078748/?ref_=nv_sr_srsg_0",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Horror, Sci-Fi
                 },
                 new Movie
@@ -390,7 +379,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BMjExMDUzODE1N15BMl5BanBnXkFtZTgwNTU5NTYxMTE@._V1_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0107614/?ref_=nv_sr_srsg_0 ",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Comedy, Drama
                 },
                 new Movie
@@ -401,7 +390,7 @@ namespace Shoop.Migrations
                     Price = 49,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BOWE2MDAwZjEtODEyOS00ZjYyLTgzNDUtYmNiY2VmNWRiMTQxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX182_CR0,0,182,268_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt0379786/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Retired")
+                    
                     // Genre: Sci-Fi, Action, Adventure
                 },
                 new Movie
@@ -412,7 +401,7 @@ namespace Shoop.Migrations
                     Price = 99,
                     MovieImageUrl = "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
                     IMDBUrl = "https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1",
-                    State = context.State.FirstOrDefault(st => st.Status == "Available")
+                    
                     // Genre: Drama, Thriller, Crime
                     //},
                     //new Movie

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Shoop.Models.Movie>
+
+@{
+    ViewBag.Title = "DispalyCart";
+}
+
+<h2>DispalyCart</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("-", "DeleteFromCart", new { id = item.Id }) |
+
+            </td>
+        </tr>
+    }
+
+</table>

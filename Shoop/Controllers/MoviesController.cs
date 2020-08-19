@@ -14,6 +14,14 @@ namespace Shoop.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        // GET: Cart
+        
+            public ActionResult Cart()
+        {
+            return View();
+
+        }
+
         // GET: Movies
         public ActionResult Index()
         {
@@ -71,6 +79,15 @@ namespace Shoop.Controllers
 
             return View(RecentlyBought);
         }
+        
+        public ActionResult Search(string searchvalue)
+        {
+            var SearchResult = (from m in db.Movies
+                                where m.Title.Contains(searchvalue) || m.Director.Contains(searchvalue)
+                                select m).ToList();
+       
+            return View(SearchResult);
+        }
     
     // GET: Movies/Details/5
     public ActionResult Details(int? id)
@@ -87,6 +104,22 @@ namespace Shoop.Controllers
             return View(movie);
         }
 
+        // GET: Shared/_SingleMoviePartial
+        public ActionResult MovieDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            return View(movie);
+        }
+
+        // Below are the legacy methods 
         // GET: Movies/Create
         public ActionResult Create()
         {
@@ -98,7 +131,7 @@ namespace Shoop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl,StatusFlag")] Movie movie)
+        public ActionResult Create([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +163,7 @@ namespace Shoop.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl,StatusFlag")] Movie movie)
+        public ActionResult Edit([Bind(Include = "Id,Title,Director,ReleaseYear,Price,MovieImageUrl,IMDBUrl")] Movie movie)
         {
             if (ModelState.IsValid)
             {

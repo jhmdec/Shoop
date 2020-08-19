@@ -37,7 +37,7 @@ namespace Shoop.Controllers
 
                 return RedirectToAction("Index", "Movies");
             }
-           public ActionResult DispalyCart()
+           public ActionResult DisplayCart()
             {
                 ShoopCartList = (List<Movie>)Session["ShoopCart"];
 

@@ -8,10 +8,11 @@
 
 
 
-            <td>
-                <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)"/>
-               
-            </td>
+        <td>
+            <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" />
+            <a class="btn btn-primary" href="/ShoopingCart/AddtoCart?id=@item.Id">Add to Cart</a>
+
+        </td>
             @*<td>
                 @Html.DisplayFor(modelItem => item.IMDBUrl)
             </td>*@

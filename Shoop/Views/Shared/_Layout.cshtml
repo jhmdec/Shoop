@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+    
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,7 +15,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-            @* <img src="~/Content/MovPic/Shopping Cart.jpg" />*@
+    @* <img src="~/Content/MovPic/Shopping Cart.jpg" />*@
 
     <style>
         body {
@@ -95,27 +97,50 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Movies/Index">Movies</a>
                 </li>
-                @*<li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>*@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li>
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    </li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Login">Login</a>
+                    </li>
+                }
+
                 @*<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>*@
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>*@
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+            <a class="navbar-brand" href="/ShoopingCart/Index"><img height="32" src="~/Content/MovPic/shoppingcartlogo.PNG" /></a>
+            @using (Html.BeginForm("Index", "Movies", FormMethod.Post))
+            {
+                @*<form class="form-inline my-2 my-lg-0" id="F1">*@
+                <div>
+                    <input class="form-control mr-sm-2" type="text" id="SrchTxt" placeholder="Search" name="SrchTxt">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+
+                @*</form>*@
+            }
+
         </div>
     </nav>
 
@@ -128,7 +153,7 @@
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    
+
 
     <script>
         //Get the button
@@ -169,7 +194,7 @@
         </p>
 
 
-        
-        </div>
+
+    </div>
 </footer>
 </html>

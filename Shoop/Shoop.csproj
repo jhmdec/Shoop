@@ -168,26 +168,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Cart.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrderRowsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ShoopCart.cs" />
-    <Compile Include="Controllers\ShoopCartController.cs" />
     <Compile Include="Controllers\ShoopingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008180736216_layout changes to navbar.cs" />
-    <Compile Include="Migrations\202008180736216_layout changes to navbar.Designer.cs">
-      <DependentUpon>202008180736216_layout changes to navbar.cs</DependentUpon>
+    <Compile Include="Migrations\202008191102593_seeding orders5.cs" />
+    <Compile Include="Migrations\202008191102593_seeding orders5.Designer.cs">
+      <DependentUpon>202008191102593_seeding orders5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008170901434_Initial1.cs" />
-    <Compile Include="Migrations\202008170901434_Initial1.Designer.cs">
-      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\202008191107313_seeding orders6.cs" />
+    <Compile Include="Migrations\202008191107313_seeding orders6.Designer.cs">
+      <DependentUpon>202008191107313_seeding orders6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -341,11 +338,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008180736216_layout changes to navbar.resx">
-      <DependentUpon>202008180736216_layout changes to navbar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008191102593_seeding orders5.resx">
+      <DependentUpon>202008191102593_seeding orders5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008170901434_Initial1.resx">
-      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008191107313_seeding orders6.resx">
+      <DependentUpon>202008191107313_seeding orders6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

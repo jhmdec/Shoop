@@ -178,13 +178,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008191102593_seeding orders5.cs" />
-    <Compile Include="Migrations\202008191102593_seeding orders5.Designer.cs">
-      <DependentUpon>202008191102593_seeding orders5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008191107313_seeding orders6.cs" />
-    <Compile Include="Migrations\202008191107313_seeding orders6.Designer.cs">
-      <DependentUpon>202008191107313_seeding orders6.cs</DependentUpon>
+    <Compile Include="Migrations\202008170901434_Initial1.cs" />
+    <Compile Include="Migrations\202008170901434_Initial1.Designer.cs">
+      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -222,6 +218,7 @@
     <Content Include="Content\MovPic\OnceUponaTimeinAmericaF.jpg" />
     <Content Include="Content\MovPic\Ran.jpg" />
     <Content Include="Content\MovPic\RanF.jpg" />
+    <Content Include="Content\MovPic\shoopingcart.png" />
     <Content Include="Content\MovPic\SHOOPLOGO_INVERTED.jpg" />
     <Content Include="Content\MovPic\SHOOP_TEST.png" />
     <Content Include="Content\MovPic\Shopping Cart.jpg" />
@@ -318,8 +315,11 @@
     <Content Include="Views\Shared\_MoviesPartial.cshtml" />
     <Content Include="Views\ShoppingCart\ShoopCart.cshtml" />
     <Content Include="Views\ShoopCart\Index.cshtml" />
-    <Content Include="Views\ShoopingCart\DispalyCart.cshtml" />
     <Content Include="Views\Movies\Search.cshtml" />
+    <Content Include="Views\Movies\SearchMovie.cshtml" />
+    <Content Include="Views\ShoopingCart\DisplayCart.cshtml" />
+    <Content Include="Views\Displaybutton.cshtml" />
+    <Content Include="Views\ShoopingCart\ShowCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,11 +338,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008191102593_seeding orders5.resx">
-      <DependentUpon>202008191102593_seeding orders5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008180736216_layout changes to navbar.resx">
+      <DependentUpon>202008180736216_layout changes to navbar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008191107313_seeding orders6.resx">
-      <DependentUpon>202008191107313_seeding orders6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008170901434_Initial1.resx">
+      <DependentUpon>202008170901434_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

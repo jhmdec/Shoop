@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Shoop.Models.Movie>
 
 @{
-    ViewBag.Title = "DispalyCart";
+    ViewBag.Title = "SearchMovie";
 }
 
-<h2>DispalyCart</h2>
+<h2>SearchMovie</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -29,7 +29,6 @@
         <th>
             @Html.DisplayNameFor(model => model.IMDBUrl)
         </th>
-        
         <th></th>
     </tr>
 
@@ -53,7 +52,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.IMDBUrl)
         </td>
-        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

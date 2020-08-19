@@ -37,6 +37,20 @@ namespace Shoop.Controllers
 
                 return RedirectToAction("Index", "Movies");
             }
+        public ActionResult ShowCart()
+        {
+            ShoopCartList = (List<Movie>)Session["ShoopCart"];
+            return View(ShoopCartList);
+        }
+
+            public ActionResult DeleteFromCart(int id)
+            {
+               ShoopCartList = (List<Movie>)Session["ShoopCart"];
+               var movie = ShoopCartList.FirstOrDefault(m => m.Id == id);
+               ShoopCartList.Remove(movie);
+            Session["ShoopCart"] = ShoopCartList;
+            return RedirectToAction("DisplayCart");
+            }
            public ActionResult DisplayCart()
             {
                 ShoopCartList = (List<Movie>)Session["ShoopCart"];

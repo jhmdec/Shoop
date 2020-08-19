@@ -8,36 +8,117 @@
         @Html.ActionLink("All Movies", "Movies")
     </p>*@
 
-
-<h2>Our Most Popular Movies</h2>
+@*<p style="margin-bottom:3px">Our Most Popular Movies</p>*@
 @*To pass an individual movie object from the list use this*@
 @*@foreach (var movie in Model.MovieListMostPopular)
     {
         @Html.Partial("_MoviePartial", movie)
     }*@
+@*@Html.Partial("_MoviesPartial", Model.MovieListMostPopular)
 
-@Html.Partial("_MoviesPartial", Model.MovieListMostPopular)
 
-<h2>Our Most Recent Movies</h2>
-
+<p style="margin-bottom:3px">Our Most Recent Movies</p>
 @Html.Partial("_MoviesPartial", Model.MovieListMostRecent)
 
 
-<h2>Our Oldest Movies</h2>
-
+<p style="margin-bottom:3px">Our Oldest Movies</p>
 @Html.Partial("_MoviesPartial", Model.MovieListOldest)
 
-<h2>Our Cheapest Movies</h2>
-
+<p style="margin-bottom:3px">Our Cheapest Movies</p>
 @Html.Partial("_MoviesPartial", Model.MovieListCheapest)
 
-<h2>Recently Bought Movies</h2>
-
-@Html.Partial("_MoviesPartial", Model.MovieListRecentlyBought)
-
+<p style="margin-bottom:3px">Recently Bought Movies</p>
+@Html.Partial("_MoviesPartial", Model.MovieListRecentlyBought)*@
 
 
-
+@*Views-Home-Index*@
 
 
 
+<div class="row col-md-12 justify-content-around" style="margin-top:5px">
+
+    <div class="row justify-content-around" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
+
+
+        <div class="card border-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">Most popular movies</div>
+            <div class="card-body">
+                <div> @Html.Partial("_MoviesPartial", Model.MovieListMostPopular)</div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="row col-md-12 justify-content-around" style="margin-top:5px">
+
+    <div class="row justify-content-around" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
+
+
+        <div class="card border-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">Our newest movies</div>
+            <div class="card-body"  id="MoRe">
+                <div> @Html.Partial("_MoviesPartial", Model.MovieListMostRecent)</div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="row col-md-12 justify-content-around" style="margin-top:5px">
+
+    <div class="row justify-content-around" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
+
+
+        <div class="card border-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">Our oldest movies</div>
+            <div class="card-body">
+                <div>@Html.Partial("_MoviesPartial", Model.MovieListOldest)</div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="row col-md-12 justify-content-around" style="margin-top:5px">
+
+    <div class="row justify-content-around" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
+
+       
+            <div class="card border-primary mb-3" style="max-width: 100%;">
+                <div class="card-header">Cheapest Movies</div>
+                <div class="card-body">
+                    <div> @Html.Partial("_MoviesPartial", Model.MovieListCheapest)</div>
+                </div>
+            </div>
+           
+        
+
+    </div>
+</div>
+
+
+<div class="row col-md-12 justify-content-around" style="margin-top:5px">
+
+    <div class="row justify-content-around" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
+
+
+        <div class="card border-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">Recently bought movies</div>
+            <div class="card-body">
+                <div>@Html.Partial("_MoviesPartial", Model.MovieListRecentlyBought)</div>
+            </div>
+        </div>
+       
+    
+    </div>
+</div>

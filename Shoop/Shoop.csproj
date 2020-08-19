@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008070940402_Initial.cs" />
-    <Compile Include="Migrations\202008070940402_Initial.Designer.cs">
-      <DependentUpon>202008070940402_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202008130953534_User Management.cs" />
+    <Compile Include="Migrations\202008130953534_User Management.Designer.cs">
+      <DependentUpon>202008130953534_User Management.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -218,6 +218,7 @@
     <Content Include="Content\MovPic\OnceUponaTimeinAmericaF.jpg" />
     <Content Include="Content\MovPic\Ran.jpg" />
     <Content Include="Content\MovPic\RanF.jpg" />
+    <Content Include="Content\MovPic\shoopingcart.png" />
     <Content Include="Content\MovPic\SHOOPLOGO_INVERTED.jpg" />
     <Content Include="Content\MovPic\SHOOP_TEST.png" />
     <Content Include="Content\MovPic\StarWars.jpg" />
@@ -309,7 +310,7 @@
     <Content Include="Views\Home\_MostRecent.cshtml" />
     <Content Include="Views\Home\_Oldest.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_MoviesPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout - Bu180820.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,8 +329,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008070940402_Initial.resx">
-      <DependentUpon>202008070940402_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008130953534_User Management.resx">
+      <DependentUpon>202008130953534_User Management.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

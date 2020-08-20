@@ -4,87 +4,53 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Movies</h2>
+@*Views-Movies-Index*@
 
-@*Remove Link to create movies*@
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-<table class="table">
-    <tr>
-        <th>
-            Movie
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Director)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        Remove fields MovieImageUrl, IMDBUrl and StatusFlag from view
-        <th>
-            @Html.DisplayNameFor(model => model.MovieImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IMDBUrl)
-        </th>
-        <th></th>
-    </tr>
+<div class="row col-md-12 justify-content-around" style="margin-top:10px">
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" class="img-thumbnail" alt="@Html.DisplayFor(modelItem => item.Title)">
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Director)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
+    <div class="row justify-content-center" style="align-content:flex-start;  margin-left:70px; margin-right:40px">
 
-            Remove fields MovieImageUrl, IMDBUrl and StatusFlag from view
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IMDBUrl)
-            </td>
+        @foreach (var item in Model)
+        {
+            <div class="card border-primary mb-3 mx-3" style="max-width: 14.8rem;">
+                <div class="card-header">@Html.DisplayFor(modelItem => item.Title)</div>
+                <div class="card-body">
+
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" class="img-thumbnail" alt="@Html.DisplayFor(modelItem => item.Title)" />
+
+                        </tr>
+
+                        @*<tr><td style="font-size:0.9em;"><b>Title:</b></td></tr>*@
+                        <tr><td style="font-size:0.9em"><b>@Html.DisplayFor(modelItem => item.Title)</b></td></tr>
+                        <tr><td style="font-size:0.9em;"><b>Director:</b> @Html.DisplayFor(modelItem => item.Director)</td></tr>
+                        <tr><td style="font-size:0.9em;"><b>Release Year:</b> @Html.DisplayFor(modelItem => item.ReleaseYear)</td></tr>
+                        <tr><td style="font-size:0.9em;padding-bottom:10px"><b>Price:</b> @Html.DisplayFor(modelItem => item.Price)</td></tr>
+
+                        <tr>
+
+                            <td style="vertical-align:bottom">
+                                @*<button type="button" class="btn btn-primary btn-sm">@Html.ActionLink("IMDb", "Details", new { id = item.Id })</button>*@
+                                @*<a button type="button" class="btn btn-primary btn-sm" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">Imdb</a>*@
+                                <button class="btn btn-primary btn-sm" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">IMDb</button>
+                                <button type="button" class="btn btn-primary btn-sm" style="vertical-align:bottom">Add to Shoopingcart</button>
+                            </td>
+
+                        </tr>
 
 
-            @*Remove options to edit*@
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
-                <a class="btn btn-primary" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">Imdb</a>
-                @*Code from Robert*@
-                @*@Html.ActionLink("Add to Cart","AddtoCart","Order",new{ id = item.Id,returnAction="DisplayMovies",returnController="Movie"},new {@class = "btn btn-primary btn-large btn-addtocart"})*@
 
-                @*@Html.ActionLink("Add", "ShoppingCart", new { id = item.Id }), new { id = item.Id, returnAction = "DisplayMovies", returnController = "Movie" }, new { @class = "btn btn-primary btn-large btn-addtocart" }) )*@
+                    </table>
 
+                </div>
+            </div>
+            @*<p>&nbsp;</p>*@
+        }
 
-                @*<a class="btn btn-primary" href=@Html.ActionLink("Add to Cart","Add", "ShoppingCart", new { id=item.Id } )*@
-
-                <a class="btn btn-primary" href="/ShoopingCart/AddtoCart?id=@item.Id">Add to Cart</a>
+    </div>
+</div>
 
 
-                @*<button id="btnaddtocart" class="btn btn-primary" onclick="location.href='@Url.Action("Add", "ShoppingCart")'", new { id = item.Id }>Add to Cart</button>*@
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
-            </td>
-        </tr>
-    }
 
-</table>

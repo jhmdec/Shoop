@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-    
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,7 +13,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    @* <img src="~/Content/MovPic/Shopping Cart.jpg" />*@
+            @* <img src="~/Content/MovPic/Shopping Cart.jpg" />*@
 
     <style>
         body {
@@ -47,10 +45,44 @@
 </head>
 <body>
 
-   
+    @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="~/Content/MovPic/SHOOP_TEST.png" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark logobar justify-content-center">
-        <a class="navbar-brand" href="#"><img height="25" src="~/Content/MovPic/SHOOPLOGO_INVERTED.jpg" /></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>*@
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark logobar">
+        <a class="navbar-brand" href="/Home/Index"><img height="25" src="~/Content/MovPic/SHOOPLOGO_INVERTED.jpg" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,36 +98,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                @if (Request.IsAuthenticated)
-                {
-                    <li>
-                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                    </li>
-                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                }
-                else
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Account/Register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Account/Login">Login</a>
-                    </li>
-                }
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/Register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/Login">Login</a>
+                </li>
                 @*<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </li>*@
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>*@
             </ul>
-            <a class="navbar-brand" href="/ShoopingCart/Index"><img height="32" src="~/Content/MovPic/shoopingcart.png" /></a>
-
+            
+            <a class="navbar-brand" href="/ShoopingCart/Index"><img height="32" src="~/Content/MovPic/shoppingcartlogo.PNG" /></a>
+            
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -112,7 +134,7 @@
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-
+    
 
     <script>
         //Get the button
@@ -145,15 +167,15 @@
 
 </body>
 <footer>
-    <div class="fixed-bottom" style="background-color:black; width:100%; height:40px; margin-top:10px;">
+    <div class="fixed-bottom" style="background-color:black; width:1024px; height:60px; margin:auto; width:1024px; margin-top:40px;">
 
         <p style="text-align:center; color:white; margin-top:14px; vertical-align:middle;">
             @*<img height="25" src="~/Content/MovPic/SHOOPLOGO_INVERTED.jpg" />*@
-            <h6 style="text-align:center; color:white; margin-top:0px; vertical-align:middle;">&copy; 2020 | SHOOP - REEL MOVIES </h6>
+            <h6 style="text-align:center; color:white; margin-top:20px; vertical-align:middle;">&copy; 2020 | SHOOP - REEL MOVIES </h6>
         </p>
 
 
-
-    </div>
+        
+        </div>
 </footer>
 </html>

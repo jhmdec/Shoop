@@ -17,7 +17,7 @@ namespace Shoop
 
         public void Configuration(IAppBuilder app)
         {
-            ////ConfigureAuth(app);
+            ConfigureAuth(app);
             //List<string> roles = new List<string>() {
             //    "SU",
             //    "Admin",
@@ -31,7 +31,7 @@ namespace Shoop
             //CreateRoles(roles);
             //CreateSuperUser();
         }
-        
+
         public void CreateRoles(List<string> roles)
         {
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));

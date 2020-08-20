@@ -1,22 +1,17 @@
-﻿@model IEnumerable<Shoop.Models.Movie>
+﻿
 
-<table class="table">
-    <tr>
-        @foreach (var item in Model)
-        {
+    @model IEnumerable<Shoop.Models.Movie>
 
+                          <div class="d-flex row p-2 justify-content-center" style="margin-top:-10px">
 
+                              @foreach (var item in Model)
+                              {
+                              <div class="d-flex flex-column ">
+                                  <img class="img-thumbnail m-2" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)" />
+                                  @*<button type="button" class="btn btn-primary btn-sm mx-auto" style="vertical-align:bottom; width:90%" href="/ShoopingCart/AddtoCart?id=@item.Id">Add to Shoopingcart</button>*@
+                                  <a class="btn btn-primary btn-sm mx-auto" style="vertical-align:bottom; width:90%" href="/ShoopingCart/AddtoCart?id=@item.Id">Add to Shoopingcart</a>
+                              </div>
+                              }
+                              
+                          </div>
 
-
-            <td>
-                <img height="218px" src="@Html.DisplayFor(modelItem => item.MovieImageUrl)"/>
-               
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.IMDBUrl)
-            </td>*@
-        }
-    </tr>
-
-
-</table>

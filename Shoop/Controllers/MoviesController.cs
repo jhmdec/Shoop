@@ -27,6 +27,26 @@ namespace Shoop.Controllers
         {
             return View(db.Movies.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(FormCollection form)
+        {
+            var SrchTxt = form["SrchTxt"].ToString();
+            //var SrchTxt=Request["SrchTxt"].ToString();
+            if (SrchTxt == null)
+            {
+
+            return View("Index",db.Movies.ToList());
+            }
+            else
+            {
+               var MovieList= (from m in db.Movies
+                 where m.Title.Contains(SrchTxt) || m.Director.Contains(SrchTxt)
+                 select m).ToList();
+
+                return View("Index", MovieList.ToList());
+            }
+
+        }
 
         public ActionResult MostPopular()
         {
@@ -85,7 +105,7 @@ namespace Shoop.Controllers
                                 where m.Title.Contains(searchvalue) || m.Director.Contains(searchvalue)
                                 select m).ToList();
        
-            return View(SearchResult);
+            return View("Index",SearchResult);
         }
     
     // GET: Movies/Details/5

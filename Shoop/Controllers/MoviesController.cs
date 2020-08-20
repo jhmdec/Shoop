@@ -63,8 +63,7 @@ namespace Shoop.Controllers
                                  res.Movie.Title,
                                  Count = g.Count()
                              }).Distinct().OrderByDescending(M => M.Count).ToList().Take(5);
-
-            
+                        
             return View(MovieList);
         }
 

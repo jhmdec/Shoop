@@ -29,14 +29,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <th>
-                
-                <input type="button" name="Add" value="+" />
-                <input type="button" name="Minus" value="-" />
-            </th>
-            <th>
+            <td>
+                <input type="text" id="T1" value=1 />
+                <a class="btn btn-primary" id="B1" onclick="FnInc();">+</a>
+
+                <a class="btn btn-primary" id="B2" onclick="FnDec();">-</a>
+            </td>
+
+
+            <td>
                 @Html.DisplayNameFor(model => model.Price)
-            </th>
+            </td>
             @*<th>
                     @Html.DisplayNameFor(model => model.Total)
                 </th>*@
@@ -48,3 +51,22 @@
         </tr>
     }
 </table>
+<script>
+    function FnInc() {
+        var Cnt = 0;
+        Cnt = document.getElementById("T1").value;
+        Cnt++;
+        document.getElementById("T1").value = Cnt;
+    }
+    function FnDec() {
+        var Cnt = 0;
+        Cnt = document.getElementById("T1").value;
+        if (Cnt == 0) {
+            document.getElementById("T1").value = 0;
+            alert("cannot be lessthan 0");
+            return;
+        }
+        Cnt--;
+        document.getElementById("T1").value = Cnt;
+    }
+</script>

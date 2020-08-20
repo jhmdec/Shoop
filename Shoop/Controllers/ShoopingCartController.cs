@@ -16,46 +16,51 @@ namespace Shoop.Controllers
         // GET: ShoopCart
         public ActionResult Index()
         {
-                        return View();
+            return View();
         }
-            
-            public ActionResult AddToCart(int id)
+
+        public ActionResult AddToCart(int id)
+        {
+            var movie = db.Movies.FirstOrDefault(m => m.Id == id);
+
+            if (Session["ShoopCart"] == null)
             {
-                var movie = db.Movies.FirstOrDefault(m => m.Id == id);
-
-                if (Session["ShoopCart"] == null)
-                {
-                    ShoopCartList.Add(movie);
-                    Session["ShoopCart"] = ShoopCartList;
-                }
-                else
-                {
-                    ShoopCartList = (List<Movie>)Session["ShoopCart"];
-                    ShoopCartList.Add(movie);
-                    Session["ShoopCart"] = ShoopCartList;
-                }
-
-                return RedirectToAction("Index", "Movies");
+                ShoopCartList.Add(movie);
+                Session["ShoopCart"] = ShoopCartList;
             }
+            else
+            {
+                ShoopCartList = (List<Movie>)Session["ShoopCart"];
+                ShoopCartList.Add(movie);
+                Session["ShoopCart"] = ShoopCartList;
+            }
+
+            return RedirectToAction("Index", "Movies");
+        }
         public ActionResult ShowCart()
         {
             ShoopCartList = (List<Movie>)Session["ShoopCart"];
             return View(ShoopCartList);
         }
 
-            public ActionResult DeleteFromCart(int id)
-            {
-               ShoopCartList = (List<Movie>)Session["ShoopCart"];
-               var movie = ShoopCartList.FirstOrDefault(m => m.Id == id);
-               ShoopCartList.Remove(movie);
+        public ActionResult DeleteFromCart(int id)
+        {
+            ShoopCartList = (List<Movie>)Session["ShoopCart"];
+            var movie = ShoopCartList.FirstOrDefault(m => m.Id == id);
+            ShoopCartList.Remove(movie);
             Session["ShoopCart"] = ShoopCartList;
             return RedirectToAction("DisplayCart");
-            }
-           public ActionResult DisplayCart()
-            {
-                ShoopCartList = (List<Movie>)Session["ShoopCart"];
+        }
+        public ActionResult DisplayCart()
+        {
+            ShoopCartList = (List<Movie>)Session["ShoopCart"];
 
-                return View(ShoopCartList);
-            }        
+            return View(ShoopCartList);
+        }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,64 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="T1" value=1 />
+
+    <a class="btn btn-primary" id="B2" onclick="FnDec();">-</a>
+
+    <a class="btn btn-primary" id="B1" onclick="FnInc();">+</a>
+
+
+    <script>
+        function FnInc() {
+            var Cnt = 0;
+            Cnt = document.getElementById("T1").value;
+            Cnt++;
+            document.getElementById("T1").value = Cnt;
+        }
+        function FnDec() {
+            var Cnt = 0;
+            Cnt = document.getElementById("T1").value;
+            if (Cnt == 0) {
+                document.getElementById("T1").value = 0;
+                alert("cannot be lessthan 0");
+                return;
+            }
+            Cnt--;
+            document.getElementById("T1").value = Cnt;
+        }
+         <table>
+        <tr>
+                 <td>Title</td>
+                 <td>Decrement Value</td>
+                 <td>Quantity</td>
+                 <td>Increment Value</td>
+                 <td>Price</td>
+                 <td>Total</td>
+            <td></td>
+        </tr>
+
+        @foreach (var movie in Model.MovieList)
+        {
+            using (Html.BeginForm("Increment", "Movies", FormMethod.Post))
+            {
+                 <tr>
+                 <td>@movie.Title ("MovieTitle", movie.Title)</td>
+                 <td>@Html.("DecrementValue", movie.IncrementValue)</td>
+                     <td>@movie.Quantity</td>
+                 <td>@Html.("IncrementValue", movie.IncrementValue)</td>
+                 <td>@movie.Price</td>
+                 <td>@movie.Total</td>
+                     <td><input type="submit" name="Update Movie"/></td>
+                 </tr>
+             }
+        }
+    </table>
+
+    </script>
+</body>
+</html>
+
+

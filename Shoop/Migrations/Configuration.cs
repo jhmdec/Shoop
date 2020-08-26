@@ -45,7 +45,7 @@ namespace Shoop.Migrations
             //CreateUsers(context);     // NOT WORKING !!!
             //CreateCustomers(context);   // FIXING THE DELIVERY NOT REQUIRED
             //CreateMovies(context);      // WORKS
-            //CreateOrders(context);    // NOTE COMPLETED AND NOT USED
+            CreateOrders(context);    // NOTE COMPLETED AND NOT USED
             CreateOrderRows(context); // NOTE COMPLETED AND NOT USED
         }
 
@@ -538,8 +538,8 @@ namespace Shoop.Migrations
                 //o => o.CustomerId,
                 new Order
                 {
-                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
-                   
+                    CustomerId = context.Customers.FirstOrDefault(c=>c.FirstName=="Nisse").Id,
+                    //CustomerId=3032,
                     OrderDate = new DateTime(2020, 8, 9),
                     NrOfItems = 2,
                 },

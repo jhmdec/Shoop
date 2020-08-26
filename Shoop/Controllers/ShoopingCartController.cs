@@ -16,7 +16,9 @@ namespace Shoop.Controllers
         // GET: ShoopCart
         public ActionResult Index()
         {
-            return View();
+            ShoopCartList = (List<Movie>)Session["ShoopCart"];
+
+            return View(ShoopCartList);
         }
 
         public ActionResult AddToCart(int id)

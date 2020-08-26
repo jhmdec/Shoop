@@ -43,10 +43,10 @@ namespace Shoop.Migrations
             CreateInitialRolesAndUsesrs();
             //CreateRoles(context);     // WORKS, BUT NOT USING ATM
             //CreateUsers(context);     // NOT WORKING !!!
-            CreateCustomers(context);   // FIXING THE DELIVERY NOT REQUIRED
-            CreateMovies(context);      // WORKS
+            //CreateCustomers(context);   // FIXING THE DELIVERY NOT REQUIRED
+            //CreateMovies(context);      // WORKS
             //CreateOrders(context);    // NOTE COMPLETED AND NOT USED
-            //CreateOrderRows(context); // NOTE COMPLETED AND NOT USED
+            CreateOrderRows(context); // NOTE COMPLETED AND NOT USED
         }
 
         public void CreateInitialRolesAndUsesrs()
@@ -529,193 +529,193 @@ namespace Shoop.Migrations
             //    // Genre: 
         }
 
-       
- 
-        //private void CreateOrders(ApplicationDbContext context)
-        //{
-        //    context.Orders.AddOrUpdate(
 
-        //        //o => o.CustomerId,
-        //        new Order
-        //        {
-        //            //CustomerId = context.Customers.FirstOrDefault(c=>c.FirstName=="Nisse").Id,
-        //            //CustomerId=3032,
-        //            //OrderDate = new DateTime(2020, 8, 9),
-        //            //NrOfItems = 2,
-        //        }
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
-        //        //    OrderDate = new DateTime(2020, 6, 11),
-        //        //    NrOfItems = 1,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
-        //        //    OrderDate = new DateTime(2020, 8, 9),
-        //        //    NrOfItems = 3,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
-        //        //    OrderDate = new DateTime(2019, 4, 20),
-        //        //    NrOfItems = 2,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Olle").Id,
-        //        //    OrderDate = new DateTime(2020, 1, 11),
-        //        //    NrOfItems = 1,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
-        //        //    OrderDate = new DateTime(2020, 5, 31),
-        //        //    NrOfItems = 1,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
-        //        //    OrderDate = new DateTime(2020, 7, 15),
-        //        //    NrOfItems = 2,
-        //        //},
-        //        //new Order
-        //        //{
-        //        //    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
-        //        //    OrderDate = new DateTime(2020, 2, 9),
-        //        //    NrOfItems = 1,
-        //        //}
-        //        );
-        //    context.SaveChanges();
-        //}
 
-        //private void CreateOrderRows(ApplicationDbContext context)
-        //{
-        //    context.OrderRows.AddOrUpdate(
-            
-        //    new OrderRow
-        //    {
-        //        OrderId = (from o in context.Orders
-        //                   join c in context.Customers on o.CustomerId equals c.Id
-        //                   where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
-        //                   select o).FirstOrDefault().Id,
-        //        MovieId = context.Movies.FirstOrDefault(m=>m.Title=="The Green Mile").Id, 
-        //        Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+        private void CreateOrders(ApplicationDbContext context)
+        {
+            context.Orders.AddOrUpdate(
 
-        //        },
+                //o => o.CustomerId,
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
+                   
+                    OrderDate = new DateTime(2020, 8, 9),
+                    NrOfItems = 2,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
+                    OrderDate = new DateTime(2020, 6, 11),
+                    NrOfItems = 1,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Nisse").Id,
+                    OrderDate = new DateTime(2020, 8, 9),
+                    NrOfItems = 3,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
+                    OrderDate = new DateTime(2019, 4, 20),
+                    NrOfItems = 2,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Olle").Id,
+                    OrderDate = new DateTime(2020, 1, 11),
+                    NrOfItems = 1,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
+                    OrderDate = new DateTime(2020, 5, 31),
+                    NrOfItems = 1,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Allan").Id,
+                    OrderDate = new DateTime(2020, 7, 15),
+                    NrOfItems = 2,
+                },
+                new Order
+                {
+                    CustomerId = context.Customers.FirstOrDefault(c => c.FirstName == "Anna").Id,
+                    OrderDate = new DateTime(2020, 2, 9),
+                    NrOfItems = 1,
+                }
+                );
+            context.SaveChanges();
+        }
 
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 1)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+        private void CreateOrderRows(ApplicationDbContext context)
+        {
+            context.OrderRows.AddOrUpdate(
 
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Price
+            new OrderRow
+            {
+                OrderId = (from o in context.Orders
+                           join c in context.Customers on o.CustomerId equals c.Id
+                           where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
+                           select o).FirstOrDefault().Id,
+                MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
+                Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
 
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 2)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 2)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Anna") && (o.NrOfItems == 1)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Olle") && (o.NrOfItems == 1)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 1)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 2)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
-        //        },
-        //        new OrderRow
-        //        {
-        //            OrderId = (from o in context.Orders
-        //                       join c in context.Customers on o.CustomerId equals c.Id
-        //                       where (c.FirstName == "Allan") && (o.NrOfItems == 2)
-        //                       select o).FirstOrDefault().Id,
-        //            MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
-        //            Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
-        //        });
-        //    context.SaveChanges();
-        //}
+            },
+
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Nisse") && (o.NrOfItems == 2)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Nisse") && (o.NrOfItems == 1)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Nisse") && (o.NrOfItems == 3)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "The Godfather").Price
+
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Anna") && (o.NrOfItems == 2)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Anna") && (o.NrOfItems == 2)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Crash").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Crash").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Anna") && (o.NrOfItems == 1)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Olle") && (o.NrOfItems == 1)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Avatar").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Allan") && (o.NrOfItems == 1)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "The Green Mile").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Allan") && (o.NrOfItems == 2)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Star Wars").Price
+                },
+                new OrderRow
+                {
+                    OrderId = (from o in context.Orders
+                               join c in context.Customers on o.CustomerId equals c.Id
+                               where (c.FirstName == "Allan") && (o.NrOfItems == 2)
+                               select o).FirstOrDefault().Id,
+                    MovieId = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Id,
+                    Price = context.Movies.FirstOrDefault(m => m.Title == "Mrs Doubtfire").Price
+                });
+            context.SaveChanges();
+        }
 
         /// <summary>
         /// GENERATED IN Startup.cs. DO NOT USE FOR NOW !!!

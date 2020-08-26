@@ -35,7 +35,7 @@
                                 @*<button type="button" class="btn btn-primary btn-sm">@Html.ActionLink("IMDb", "Details", new { id = item.Id })</button>*@
                                 @*<a button type="button" class="btn btn-primary btn-sm" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">Imdb</a>*@
                                 <button class="btn btn-primary btn-sm" href="@item.IMDBUrl" target="popup" onclick="window.open('@item.IMDBUrl', 'popup', 'width:600px,height:600px');return false">IMDb</button>
-                                <button type="button" class="btn btn-primary btn-sm" style="vertical-align:bottom">Add to Shoopingcart</button>
+                                <a type="button" class="btn btn-primary btn-sm" style="vertical-align:bottom">Add to Shoopingcart</a>
                             </td>
 
                         </tr>

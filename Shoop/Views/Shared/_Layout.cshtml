@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,10 +47,10 @@
 </head>
 <body>
 
-   
+
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark logobar justify-content-center">
-        <a class="navbar-brand" href="#"><img height="25" src="~/Content/MovPic/SHOOPLOGO_INVERTED.jpg" /></a>
+        <a class="navbar-brand" href="/Home/Index"><img height="25" src="~/Content/MovPic/SHOOPLOGO_INVERTED.jpg" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,14 +64,37 @@
                     <a class="nav-link" href="/Movies/Index">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <h5 class="nav-link" style="color:white">|</h5>
                 </li>
+                @*<li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>*@
+                @*@if (Request.IsAuthenticated)
+
+                    {
+                        <li class="collapse navbar-collapse nav-link">
+                            @Html.ActionLink(" Hello, " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                        </li>
+                        <li class="collapse navbar-collapse nav-link" id="navbarColor02"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Account/Login">Login</a>
+                        </li>
+                    }*@
+
                 @if (Request.IsAuthenticated)
                 {
-                    <li>
-                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    <li class="nav-item">
+                        @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link", title = "Manage" })
                     </li>
-                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    <li class="nav-item mr-sm-2">
+                        <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                    </li>
                 }
                 else
                 {
@@ -82,23 +105,24 @@
                         <a class="nav-link" href="/Account/Login">Login</a>
                     </li>
                 }
-
-                @*<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </li>*@
             </ul>
+
+            @*<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>*@
+
             <a class="navbar-brand" href="/ShoopingCart/Index"><img height="32" src="~/Content/MovPic/shoopingcart.png" /></a>
 
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <a class="btn btn-secondary my-2 my-sm-0" href="/Movies/Search">Search</a>
             </form>
         </div>
     </nav>

@@ -10,6 +10,7 @@
     border-width: 0.5px;
     border-top-width: 0px*/
 }
+
 .logobar {
     background-color: black;
 }
@@ -36,8 +37,7 @@
     height: 100%;
 }
 
-.nav-link 
-{
+.nav-link {
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -52,11 +52,12 @@
     left: 0;
     bottom: 0;
     /*width: 100%;*/
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration-color: white;
+background-color: black;
+color: white;
+text-align: center;
+text-decoration-color: white;
 }
+
 */
 
 .footer {
@@ -69,9 +70,9 @@
     color: white;
     text-align: center;
 }
-.container
-{
-    height:100%;
+
+.container {
+    height: 100%;
     padding-left: 5;
     padding-right: 5;
     /*background-color: beige;*/
@@ -101,7 +102,6 @@
 .table td {
     padding: 0.75rem;
     vertical-align: top;
-    
     /*border-top: 1px solid #ccc;*/
 }
 
@@ -113,7 +113,6 @@
     padding: 0.4rem;
     font-size: small;
     border-width: 3px;
-    
 }
 
 .card {
@@ -131,7 +130,6 @@
     background-clip: border-box;
     border: 2px solid #eeeeee;
     border-radius: 0.45rem;
-    
 }
 
 .card-header {
@@ -162,7 +160,9 @@
     max-width: 100%;
     height: auto;
     /*margin-bottom:6px;*/
-}*/
+}
+
+*/
 
 .my-container {
     grid-column-gap: 15px;
@@ -180,10 +180,16 @@
     color: #212529;
 }
 
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
 /*@media only screen and (max-width: 600px) {
     #MoRe {
         flex-direction:column;
     }
 }*/
-   
+
 

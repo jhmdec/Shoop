@@ -6,13 +6,19 @@
 
 <h2>Your Cart</h2>
 
+
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.Label("Number")
+            
+            <a class="btn btn-primary" id="B1" onclick="FnInc();">-</a>
+            <input type="text" id="T1" value=1 />
+            @Html.Label("Quantity")
+            <a class="btn btn-primary" id="B2" onclick="FnDec();">+</a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)

@@ -320,6 +320,8 @@
     <Content Include="Views\Displaybutton.cshtml" />
     <Content Include="Views\ShoopingCart\ShowCart.cshtml" />
     <Content Include="Views\ShoopingCart\Test.cshtml" />
+    <Content Include="Views\ShoopingCart\ShoopCart.cshtml" />
+    <Content Include="Views\ShoopingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Shoop.Models.Movie>
+
+@{
+    ViewBag.Title = "ShoopCart";
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -29,7 +35,7 @@
             num[index].style.display = 'none';
         }
 
-        
+
             function FnInc() {
             var Cnt = 0;
             Cnt = document.getElementById("T1").value;
